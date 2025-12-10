@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Toolbar Icons</title>
+  <style>
+    body {
+      background: #2a2a2a;
+      padding: 40px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #e0e0e0;
+    }
+
+    .toolbar-showcase {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      background: #1f1f1f;
+      border-radius: 8px;
+      width: fit-content;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-button {
+      width: 32px;
+      height: 32px;
+      background: #2a2a2a;
+      border: 1px solid #3a3a3a;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .icon-button:hover {
+      background: #3a3a3a;
+      border-color: #2ACCFF;
+    }
+
+    .icon-button svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .repeater-circle {
+      fill: none;
+      stroke: #2ACCFF;
+      stroke-width: 1.2;
+    }
+
+    .icon-button svg path,
+    .icon-button svg line,
+    .icon-button svg polyline {
+      stroke: #2ACCFF;
+      stroke-width: 1.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .icon-button svg circle:not(.repeater-circle) {
+      fill: none;
+      stroke: #2ACCFF;
+      stroke-width: 1.2;
+    }
+
+    .text-input {
+      width: 80px;
+      height: 32px;
+      background: #2a2a2a;
+      border: 1px solid #3a3a3a;
+      border-radius: 4px;
+      color: #e0e0e0;
+      text-align: center;
+      font-size: 14px;
+      padding: 0 8px;
+    }
+
+    .icon-label {
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      max-width: 80px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin-bottom: 32px;">React Toolbar</h1>
+
+  <div class="toolbar-showcase">
+    <!-- Text Input -->
+    <div class="icon-item">
+      <input type="text" class="text-input" value="123" readonly>
+      <div class="icon-label">Text Input</div>
+    </div>
+
+    <!-- Linear Repeater -->
+    <div class="icon-item">
+      <button class="icon-button">
+        <svg viewBox="0 0 28 28">
+          <circle cx="5" cy="14" r="3" class="repeater-circle"/>
+          <circle cx="14" cy="14" r="3" class="repeater-circle"/>
+          <circle cx="23" cy="14" r="3" class="repeater-circle"/>
+        </svg>
+      </button>
+      <div class="icon-label">Linear</div>
+    </div>
+
+    <!-- Grid Repeater -->
+    <div class="icon-item">
+      <button class="icon-button">
+        <svg viewBox="0 0 28 28">
+          <circle cx="5" cy="5" r="3" class="repeater-circle"/>
+          <circle cx="14" cy="5" r="3" class="repeater-circle"/>
+          <circle cx="23" cy="5" r="3" class="repeater-circle"/>
+          <circle cx="5" cy="14" r="3" class="repeater-circle"/>
+          <circle cx="14" cy="14" r="3" class="repeater-circle"/>
+          <circle cx="23" cy="14" r="3" class="repeater-circle"/>
+          <circle cx="5" cy="23" r="3" class="repeater-circle"/>
+          <circle cx="14" cy="23" r="3" class="repeater-circle"/>
+          <circle cx="23" cy="23" r="3" class="repeater-circle"/>
+        </svg>
+      </button>
+      <div class="icon-label">Grid</div>
+    </div>
+
+    <!-- Radial Repeater -->
+    <div class="icon-item">
+      <button class="icon-button">
+        <svg viewBox="0 0 28 28">
+          <circle cx="14" cy="4" r="3" class="repeater-circle"/>
+          <circle cx="22.5" cy="9.5" r="3" class="repeater-circle"/>
+          <circle cx="24" cy="18" r="3" class="repeater-circle"/>
+          <circle cx="14" cy="24" r="3" class="repeater-circle"/>
+          <circle cx="5.5" cy="18.5" r="3" class="repeater-circle"/>
+          <circle cx="4" cy="10" r="3" class="repeater-circle"/>
+        </svg>
+      </button>
+      <div class="icon-label">Radial</div>
+    </div>
+
+    <!-- Path Repeater -->
+    <div class="icon-item">
+      <button class="icon-button">
+        <svg viewBox="0 0 28 28">
+          <path d="M 6 20 C 6 9, 13 11, 14 14 C 15 17, 22 19, 22 8"/>
+          <circle cx="6" cy="20" r="2" style="fill: #2ACCFF;"/>
+          <circle cx="22" cy="8" r="2" style="fill: #2ACCFF;"/>
+        </svg>
+      </button>
+      <div class="icon-label">Path</div>
+    </div>
+
+    <!-- Effector -->
+    <div class="icon-item">
+      <button class="icon-button">
+        <svg viewBox="0 0 28 28">
+          <circle cx="14" cy="14" r="10.5"/>
+          <line x1="14" y1="8" x2="14" y2="14"/>
+          <line x1="8" y1="14" x2="14" y2="14"/>
+        </svg>
+      </button>
+      <div class="icon-label">Effector</div>
+    </div>
+
+    <!-- Tracer -->
+    <div class="icon-item">
+      <button class="icon-button">
+        <svg viewBox="0 0 28 28">
+          <line x1="3.5" y1="3.5" x2="3.5" y2="24.5"/>
+          <line x1="3.5" y1="24.5" x2="24.5" y2="24.5"/>
+          <line x1="24.5" y1="24.5" x2="24.5" y2="3.5"/>
+          <line x1="24.5" y1="3.5" x2="10.5" y2="3.5"/>
+          <line x1="10.5" y1="3.5" x2="10.5" y2="10.5"/>
+          <line x1="10.5" y1="10.5" x2="17.5" y2="10.5"/>
+          <line x1="17.5" y1="10.5" x2="17.5" y2="17.5"/>
+          <line x1="17.5" y1="17.5" x2="10.5" y2="17.5"/>
+          <line x1="10.5" y1="17.5" x2="10.5" y2="24.5"/>
+        </svg>
+      </button>
+      <div class="icon-label">Tracer</div>
+    </div>
+
+    <!-- Refresh -->
+    <div class="icon-item">
+      <button class="icon-button">
+        <svg viewBox="0 0 28 28">
+          <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11"/>
+        </svg>
+      </button>
+      <div class="icon-label">Refresh</div>
+    </div>
+
+    <!-- Delete -->
+    <div class="icon-item">
+      <button class="icon-button">
+        <svg viewBox="0 0 28 28">
+          <circle cx="14" cy="14" r="11.67"/>
+          <line x1="8.5" y1="8.5" x2="19.5" y2="19.5"/>
+          <line x1="19.5" y1="8.5" x2="8.5" y2="19.5"/>
+        </svg>
+      </button>
+      <div class="icon-label">Delete</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 8px; max-width: 800px;">
+    <h2 style="margin-bottom: 16px;">How to Use</h2>
+    <p style="line-height: 1.7; color: #ccc;">
+      This page shows the React toolbar interface. To capture this as an image for documentation:
+    </p>
+    <ol style="line-height: 2; color: #ccc; margin-top: 16px;">
+      <li>Open this file in a browser</li>
+      <li>Take a screenshot of just the toolbar area</li>
+      <li>Save as <code style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px;">toolbar-interface.png</code></li>
+      <li>Copy to <code style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px;">docs-site/images/</code></li>
+      <li>Add to documentation with:<br><code style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px; display: inline-block; margin-top: 8px;">![React Toolbar](images/toolbar-interface.png)</code></li>
+    </ol>
+  </div>
+</body>
+</html>

@@ -1,5 +1,3 @@
-# React - Parametric Cloning for After Effects
-
 <span id="overview"></span>
 ## Overview
 
@@ -11,7 +9,7 @@ React is a powerful After Effects extension that enables parametric cloning and 
 - 4 Modifiers (Random, Step, Sticky, Elastic)
 - Advanced Tools (Tracer, Refresh, Delete)
 
-**Video Tutorial:** [Watch on YouTube](https://youtu.be/C8R-feavAv0)
+**Video Tutorial:** [Watch on YouTube](https://youtu.be/C8R-feavAv0){:target="_blank"}
 
 ---
 
@@ -21,8 +19,8 @@ React is a powerful After Effects extension that enables parametric cloning and 
 React is a ZXP extension and should be installed using aescripts' ZXP installer:
 
 **Installation Steps:**
-1. Download React from [aescripts.com](https://aescripts.com/react/)
-2. Install using [ZXP Installer](https://aescripts.com/learn/post/zxp-installer/)
+1. Download React from [aescripts.com](https://aescripts.com/react/){:target="_blank"}
+2. Install using [ZXP Installer](https://aescripts.com/learn/post/zxp-installer/){:target="_blank"}
 3. Restart After Effects
 4. Open: **Window → Extensions → React**
 
@@ -57,12 +55,12 @@ The React panel will appear in your After Effects workspace.
   </div>
   <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
     <svg width="28" height="28" viewBox="0 0 28 28">
-      <circle cx="14" cy="3" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="6" cy="8" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="3" cy="17" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="11" cy="25" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="22" cy="20" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="25" cy="11" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="22.5" cy="9.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="22.5" cy="18.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5.5" cy="18.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5.5" cy="9.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
   </div>
   <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
@@ -156,16 +154,16 @@ The React toolbar provides all the controls you need to create parametric clonin
   <div style="display: flex; align-items: flex-start; gap: 16px;">
     <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
       <svg width="28" height="28" viewBox="0 0 28 28">
-        <circle cx="14" cy="3" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="6" cy="8" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="3" cy="17" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="11" cy="25" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="22" cy="20" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="25" cy="11" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="22.5" cy="9.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="22.5" cy="18.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5.5" cy="18.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5.5" cy="9.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       </svg>
     </div>
     <div>
-      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Radial Repeater</h3>
+      <h3 style="margin: 0 0 8px; 0; font-size: 18px; color: #303030;">Radial Repeater</h3>
       <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a circle. Enter the amount of repeated layers in the text input box.</p>
     </div>
   </div>
@@ -317,10 +315,14 @@ Remember to press Refresh after updating the sorting mode.
 
 Arranges layers in a line.
 
+![Linear Repeater Controls](images/Linear.png)
+
 <span id="grid-repeater"></span>
 ### Grid Repeater
 
 Arranges layers in a grid shape.
+
+![Grid Repeater Controls](images/Grid.png)
 
 The Honeycomb Offset control allows you to change the X position of every other row.
 
@@ -329,12 +331,16 @@ The Honeycomb Offset control allows you to change the X position of every other 
 
 Arranges layers in a circle shape.
 
+![Radial Repeater Controls](images/Radial.png)
+
 The radial and path repeaters have trim settings, which affect the positioning of layers on the circle or path. **Start** and **End** settings change where the first or last layers are positioned and updates the layers between accordingly. With **Loop** enabled, layers can be looped across the circle or path seamlessly by changing the **Offset** setting. With **Loop** disabled, layers are constricted to the start and end points of the circle or path.
 
 <span id="path-repeater"></span>
 ### Path Repeater
 
 There are two ways to set up a path repeater - select path or create path.
+
+![Path Repeater Controls](images/Path.png)
 
 Click the path repeater button and a dialog window will appear.
 
@@ -399,6 +405,8 @@ With the exception of the Color effector controls, most of the controls have sim
 <span id="position-effector"></span>
 #### React - Effector | Position
 
+![Position Effector Controls](images/Position.png)
+
 **Mode** allows you to select from the two modes within the position effector - Relative/Absolute and Attract/Repel.
 
 In **Relative/Absolute** mode, use the corresponding dropdown to change the settings in X, Y and Z. You can set each dimension to be relative to the layer's current position or absolute position.
@@ -407,12 +415,16 @@ In **Attract/Repel** mode, use the corresponding dropdown to change the target (
 
 #### React - Effector | Scale
 
+![Scale Effector Controls](images/Scale.png)
+
 **Uniform Scale** is enabled by default. Disable it to affect scale on individual dimensions.
 
 Change the settings in X, Y and Z. You can set each dimension to be relative to the layer's current position or absolute position.
 
 <span id="rotation-effector"></span>
 #### React - Effector | Rotation
+
+![Rotation Effector Controls](images/Rotation.png)
 
 **Mode** allows you to select from the two modes within the rotation effector - Relative/Absolute and Look At.
 
@@ -422,6 +434,8 @@ In **Look At** mode, use the corresponding dropdown to change the target (by def
 
 <span id="color-effector"></span>
 #### React - Effector | Color
+
+![Color Effector Controls](images/Color.png)
 
 **Color Mode** allows you to select from the three modes within the color effector - Single Color, HSL and Multiple Colors.
 
