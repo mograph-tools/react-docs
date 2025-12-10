@@ -8,7 +8,7 @@ React is a powerful After Effects extension that enables parametric cloning and 
 **Key Features:**
 - 4 Repeater Types (Linear, Grid, Radial, Path)
 - Effectors for any keyframeable property
-- 4 Modifiers (Random, Step, Sticky, Noise)
+- 4 Modifiers (Random, Step, Sticky, Elastic)
 - Advanced Tools (Tracer, Refresh, Delete)
 
 **Video Tutorial:** [Watch on YouTube](https://youtu.be/C8R-feavAv0)
@@ -57,13 +57,12 @@ The React panel will appear in your After Effects workspace.
   </div>
   <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
     <svg width="28" height="28" viewBox="0 0 28 28">
-      <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="5.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="4" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="10" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="18" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="24" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-      <circle cx="22.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="3" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="6" cy="8" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="3" cy="17" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="11" cy="25" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="22" cy="20" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="25" cy="11" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
   </div>
   <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
@@ -157,13 +156,12 @@ The React toolbar provides all the controls you need to create parametric clonin
   <div style="display: flex; align-items: flex-start; gap: 16px;">
     <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
       <svg width="28" height="28" viewBox="0 0 28 28">
-        <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="5.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="4" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="10" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="18" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="24" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="22.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="3" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="6" cy="8" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="3" cy="17" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="11" cy="25" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="22" cy="20" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="25" cy="11" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       </svg>
     </div>
     <div>
@@ -255,596 +253,333 @@ The React toolbar provides all the controls you need to create parametric clonin
 
 ---
 
+<span id="repeaters"></span>
 ## Repeaters
 
-<span id="repeaters"></span>
-### Setting Up a Repeater
+### Setting up a repeater
 
 Click any of the repeater buttons to set up a repeater.
 
-A Repeater null is created each time a repeater button is clicked. As well as changing position, scale and rotation for the repeater, there is also an effect on this null which affects amount, spacing and sorting modes.
+A Repeater null is created each time a repeater button is clicked. As well as changing position, scale and rotation for the repeater, there is also an effect on this null which affects amount, spacing and sorting modes, as well as a few other things.
 
-**Workflow:**
-- **With layers selected:** Selected layers will be repeated
-- **No layers selected:** Null layers will be created and repeated
-- **Multiple layers:** Layers will iterate through the repeater by default
+Select your layer or layers that you want to be repeated before clicking. Or leave your layers unselected to create nulls that will then be used in the repeater.
+
+Selecting two or more layers will result in them iterating through the repeater by default. Change the sorting mode by clicking on the Repeater null, changing the Sort mode and clicking the Refresh button in the React toolbar.
 
 <span id="setting-repeater-amounts"></span>
-### Setting the Amount of Repeated Layers
+### Setting the amount of repeated layers
 
-**Option 1: Text Input (Before Creating)**
-- Enter a number in the text field before clicking repeater button
-- **Grid:** Use one number (e.g., "10" → 10×10) or two numbers (e.g., "10x5" → 10 columns, 5 rows)
-- Separators: space, comma, *, -, or _
-- **Linear/Radial/Path:** First number only
+To set the amount of layers in a repeater, there are a few options:
 
-**Option 2: After Creation**
-- Create repeater first
-- Select Repeater null and change amount
-- Press **Refresh** button to add/remove layers
-
-**Option 3: Use Defaults**
-- Leave text input blank
-- Default values from Preferences will be used
+1. Enter a number in the text input field before clicking the repeater button. For the grid repeater, you can use just 1 number if you want the same amount in X and Y. Separate two numbers with a space, comma, *, - or _ to input X and Y values. For the linear, radial and path repeaters, just the first number in the text input field will be used.
+2. Create a repeater first. Then select the Repeater null and change the amount. Layers will update automatically, however you may need to press the Refresh button in the React toolbar to add or remove layers from the repeater.
+3. Leave the text input field blank and default values will be used. These can be changed in the Preferences menu.
 
 ### Repeater Settings
 
-Select the Repeater null to see controls in the Effects panel:
+Each of the repeaters behave in similar ways.
 
-**Amount**
-- Change number of layers
-- Press Refresh to add/remove layers
+Select the Repeater null and you will see the repeater controls in the Effects panel.
 
-**Spacing/Radius**
-- Distance between layers
-- Radius for radial repeaters
-- Scale the Repeater null to adjust spacing
+#### Amount
 
-**Repeat From**
-- **Centre:** Repeater null positioned at center of pattern
-- **First Layer:** Repeater null positioned at first layer
+Change the amount of layers in the repeater. Layers will update automatically, however you may need to press the Refresh button in the React toolbar to add or remove layers from the repeater.
+
+#### Spacing/Radius
+
+Change the amount of spacing between layers in the repeater. Or the radius of the circle for radial repeaters.
+
+You can also change the spacing of the repeater by changing the Repeater null's scale.
+
+#### Repeat from
+
+There are two options - Centre or First Layer. This determines the anchor point of the repeater and how spacing affects the layers. Selecting Centre will change the positions of the repeater layers so that the repeater null is in the centre. Alternatively, selecting First Layer will place the repeater null in the same position as the first layer.
 
 <span id="sorting-modes"></span>
-**Sorting**
-- **Iterate:** Sequential order (1, 2, 3, 1, 2, 3, 1, 2, 3...)
-- **Cluster:** Group same layers (1, 1, 1, 2, 2, 2, 3, 3, 3...)
-- **Random:** Random arrangement (press Refresh for new random)
-- **Rows/Columns:** Grid only - arrange by rows or columns
+#### Sorting
 
-*Remember to press Refresh after changing sorting mode.*
+For repeaters using two or more different layers, you may want to change the sorting mode.
 
----
+Select from the dropdown then press the Refresh button to update.
+
+**Iterate** arranges layers in sequential order. For example, if there are 3 different layers in a repeater, they would be arranged like this - 1, 2, 3, 1, 2, 3, 1, 2, 3
+
+**Cluster** groups the same layers into groups. For example, for 3 different layers in a repeater, they would be arranged like this - 1, 1, 1, 2, 2, 2, 3, 3, 3
+
+**Random** arranges layer randomly. Press the Refresh button multiple times to give different random arrangements.
+
+**Rows and Columns (Grid only)** arranges layers into rows or columns. This will only work for grid repeaters.
+
+Remember to press Refresh after updating the sorting mode.
 
 <span id="linear-repeater"></span>
 ### Linear Repeater
 
-Duplicate layers in a straight line.
-
-![Linear Repeater controls](images/Linear.png)
-*Linear Repeater controls in Effects panel*
-
-**How to Use:**
-1. Select layer(s) in composition
-2. Enter amount in text input (e.g., "10")
-3. Click **Linear Repeater** button
-
-**Controls:**
-- **Amount** - Number of clones (default: 6)
-- **Spacing** - Distance between clones (default: 100px)
-- **Rotation** - Rotation angle for entire array
-- **Scale** - Scale multiplier for entire array
-- **Repeat from** - Start from first layer or center pattern
-- **Offset** - Manual position adjustment
-
-**Use Cases:**
-- Title sequences with staggered text
-- Fence posts or pillars
-- Animation steps
-
----
+Arranges layers in a line.
 
 <span id="grid-repeater"></span>
 ### Grid Repeater
 
-Arrange layers in rows and columns.
+Arranges layers in a grid shape.
 
-![Grid Repeater controls](images/Grid.png)
-*Grid Repeater controls in Effects panel*
-
-**How to Use:**
-1. Select layer(s) in composition
-2. Enter dimensions in text input:
-   - Single number: "10" → 10×10 grid
-   - Two numbers: "10x5" → 10 columns, 5 rows
-3. Click **Grid Repeater** button
-
-**Controls:**
-- **Amount** - Grid dimensions (X × Y)
-- **Spacing** - Distance between clones (X and Y)
-- **Rotation** - Rotation angle for entire grid
-- **Scale** - Scale multiplier for entire grid
-- **Repeat from** - Position grid from corner or center
-- **Offset** - Manual position adjustment (X and Y)
-- **Honeycomb Offset** - Offset alternate rows for honeycomb pattern
-
-**Use Cases:**
-- Tiled backgrounds
-- Crowd duplication
-- Photo grids
-- Honeycomb patterns
-
----
+The Honeycomb Offset control allows you to change the X position of every other row.
 
 <span id="radial-repeater"></span>
 ### Radial Repeater
 
-Distribute layers in a circle.
+Arranges layers in a circle shape.
 
-![Radial Repeater controls](images/Radial.png)
-*Radial Repeater controls in Effects panel*
-
-**How to Use:**
-1. Select layer(s) in composition
-2. Enter amount in text input (e.g., "23")
-3. Click **Radial Repeater** button
-
-**Controls:**
-- **Amount** - Number of clones around circle (default: 23)
-- **Radius** - Distance from center point
-- **Rotation** - Starting rotation angle
-- **Scale** - Scale multiplier for entire array
-- **Start Angle** - Where circle begins (default: 0°)
-- **End Angle** - Where circle ends (default: 360°)
-- **Offset** - Rotational offset adjustment
-- **Loop** - Enable seamless looping with Offset
-
-**Trim Settings:**
-- **Start/End:** Position first/last layers
-- **Loop Enabled:** Layers loop seamlessly across circle
-- **Loop Disabled:** Layers constrained to start/end points
-
-**Use Cases:**
-- Clock numbers
-- Circular menus
-- Mandala patterns
-- Radial progress indicators
-
----
+The radial and path repeaters have trim settings, which affect the positioning of layers on the circle or path. **Start** and **End** settings change where the first or last layers are positioned and updates the layers between accordingly. With **Loop** enabled, layers can be looped across the circle or path seamlessly by changing the **Offset** setting. With **Loop** disabled, layers are constricted to the start and end points of the circle or path.
 
 <span id="path-repeater"></span>
 ### Path Repeater
 
-Distribute layers along a custom path.
+There are two ways to set up a path repeater - select path or create path.
 
-![Path Repeater controls](images/Path.png)
-*Path Repeater controls in Effects panel*
+Click the path repeater button and a dialog window will appear.
 
-**How to Use:**
+**Select Path** - With the dialog window open, select an existing path in your composition (ensure the path is selected, not the layer). Then click **Select Path**
 
-**Option 1: Create New Path**
-1. Select layer(s) in composition
-2. Enter amount in text input (e.g., "10")
-3. Click **Path Repeater** button
-4. Select **Create new path** radio button
-5. Choose number of points (3-10)
-6. Enable **Use bezier curves** for smooth curves
-7. Click **Continue**
+**Create Path** - Again, with the dialog window open, select how many points you'd like the new path to have and whether the points should be bezier. Then click **Create Path.** The new path will run left to right be default, however you can change the path in the same way you normally would.
 
-**Option 2: Select Existing Path**
-1. Select layer(s) in composition
-2. Select a shape path property in timeline
-3. Click **Path Repeater** button
-4. Select **Select existing path** radio button
-5. Click **Continue**
-
-**Controls:**
-- **Amount** - Number of clones along path (default: 10)
-- **Offset** - Shift position along path (0-100%)
-- **Rotation** - Rotation angle for entire array
-- **Scale** - Scale multiplier for entire array
-- **Start/End** - Trim settings (like Radial)
-- **Loop** - Enable seamless looping
-
-**Use Cases:**
-- Text on path
-- Following motion graphics
-- Custom distribution patterns
-- Organic animations
+The path repeater also has trim settings, which are explained in the radial repeater above.
 
 ---
-
-## Effectors
 
 <span id="effectors"></span>
-<span id="effector-overview"></span>
-### Effector Overview
+## Effectors
 
-Effectors apply dynamic transformations to properties based on layer index or distance from an effector layer.
+Effectors can be used to change property values across many layers.
 
-**New in React 2:** Apply effectors to almost any keyframeable property in After Effects!
+In React 2, you can now apply effectors to almost any property in After Effects.
 
-<span id="basic-effector-usage"></span>
-### Adding an Effector
+### Adding an effector
 
-1. Select any layer property (or properties) that accepts keyframes
-   - Position, Scale, Rotation, Opacity, Color, Start, End, etc.
-2. Click **Add Effector** button
+Select any layer property (or properties) that accepts keyframes. This could be position, scale, rotation, opacity, color, start, end, for example.
 
-**Smart Selection:**
-- If property is in a repeater → Effector applies to ALL layers in repeater
-- Hold **ALT** when clicking → Apply only to selected layer
-- Select multiple properties → All get effector controls
+Then, press the **Add Effector** button.
 
-**Result:**
-- **Effector null** - Contains all effector settings
-- **Guide layer** - Visualizes falloff (only visible when falloff enabled)
+If the property is part of a layer within a repeater, the effector will be added to every layer within that repeater. For example, to add an effector to the position property of all layers in a grid repeater, we only need to select one position property, not all of them. This makes the process of selecting properties much quicker.
 
----
+Perhaps a layer is within a repeater but you don't want the effector to be added to all the properties? That's fine, just hold ALT when clicking the **Add Effector** button.
+
+You can also select more than one property (for example, scale and opacity).
 
 ### Effector Settings
 
+After clicking the **Add Effector** button, two new layers will appear. One is the Effector null, which controls all the settings, and the other is the guide, which is for falloff visualisation (this only appears in the composition window when Falloff Shape is not Off)
+
+Depending on the amount of properties selected, you will see at least two effects on the Effector null - the **React - Effector** effect (which are the main effector controls) and the property effect (for example, **React - Effector | Position**, which control that property within an effector ).
+
+#### React - Effector
+
+These are the main controls for the effector and work the same no matter which property has been selected.
+
+**Amount** controls the amount of effect the effector controls have. It is set to 100% by default.
+
+<span id="falloff"></span>
+Under **Falloff**, we can control whether the effector uses a proximity falloff, which shape to use and the size of the falloff. By default, **Shape** is set to Off. Select Circle, Box or Linear to see a visualisation in the comp window. Change the falloff position, scale and rotation by moving and scaling the Effector null. As well as changing the null scale, you can also use **Size**.
+
+**Hold** affects the falloff sharpness is set to 50% by default. When set to 0%, there is a gradual change, with very few properties reaching maximum effector values. When set to 100%, there is an immediate change, with all properties reaching maximum effector values within the falloff.
+
+Under **Animation**, we can change to In, In & Out or Inverse, which reverses the effector. We can also change the **Easing** - by default, Ease In & Out is selected. There are options for Linear, Ease In, Ease Out, Ease In & Out and Custom.
+
+If **Custom Easing** is selected, use the settings here to tune the easing. It's worth playing with these settings to understand how they work. Imagine a graph similar to the Curves effect in After Effect - Ease In - X and Y moves the lower left point, Ease Out - X and Y moves the upper right point.
+
+### Effector Property Controls
+
+The second effect on the Effector null is the effector property controls, which control individual properties (position, scale, opacity, for example) within the effector.
+
+If you have selected more than one property before clicking **Add Effector**, each property will have it's own effect controls here.
+
+Each property has a type. It could be a 3D, 2D or 1D value, or a color value. For example, the position property is a 3D value (when the layer is 3D) and opacity is a 1D value. React will apply the relevant effector property control to a property.
+
+With the exception of the Color effector controls, most of the controls have similar functionality and modifiers. However, there are some special cases - position, scale, rotation and color.
+
 <span id="position-effector"></span>
-#### Position Effector
+#### React - Effector | Position
 
-Control the X and Y position of repeated layers.
+**Mode** allows you to select from the two modes within the position effector - Relative/Absolute and Attract/Repel.
 
-![Position Effector controls](images/Position.png)
-*Position Effector controls in Effects panel*
+In **Relative/Absolute** mode, use the corresponding dropdown to change the settings in X, Y and Z. You can set each dimension to be relative to the layer's current position or absolute position.
 
-**Mode: Relative/Absolute**
-- Set X, Y, Z to be relative to current position or absolute position
+In **Attract/Repel** mode, use the corresponding dropdown to change the target (by default, it is set to the effector null). Change the **Attract/Repel** setting to either attract layers (negative values) to the target layer, or repel (positive values). You can also modify this per X and Y dimension by setting the **X - Multiplier** and **Y - Multiplier**.
 
-**Mode: Attract/Repel**
-- **Attract/Repel Amount** - Negative = attract, Positive = repel
-- **Target** - Layer to attract to (default: effector layer)
-- **X/Y Multiplier** - Modify per dimension
+#### React - Effector | Scale
 
-**Common Uses:**
-- Scattered text layouts
-- Organic motion
-- Physics simulations
+**Uniform Scale** is enabled by default. Disable it to affect scale on individual dimensions.
 
----
+Change the settings in X, Y and Z. You can set each dimension to be relative to the layer's current position or absolute position.
 
 <span id="rotation-effector"></span>
-#### Rotation Effector
+#### React - Effector | Rotation
 
-Control the rotation (Z, X, Y) of repeated layers.
+**Mode** allows you to select from the two modes within the rotation effector - Relative/Absolute and Look At.
 
-![Rotation Effector controls](images/Rotation.png)
-*Rotation Effector controls in Effects panel*
+In **Relative/Absolute** mode, use the corresponding dropdown to change the settings in X, Y and Z. You can set each dimension to be relative to the layer's current rotation or absolute rotation. The X and Y settings will only affect 3D layers.
 
-**Mode: Relative/Absolute**
-- Set X, Y, Z to be relative to current rotation or absolute rotation
-- X and Y only affect 3D layers
-
-**Mode: Look At**
-- **Target** - Layer to look at (default: effector layer)
-- **Offset** - Angle offset when aiming at target
-
-**Common Uses:**
-- Text rotation variations
-- Camera facing elements
-- Aim constraints
-
----
-
-<span id="scale-effector"></span>
-#### Scale Effector
-
-Control the uniform or independent X/Y scale of repeated layers.
-
-![Scale Effector controls](images/Scale.png)
-*Scale Effector controls in Effects panel*
-
-**Controls:**
-- **Uniform Scale** - Checkbox to link X and Y scale (enabled by default)
-- **X / Y / Z Scale** - Independent scale controls
-- **Relative/Absolute** - Per dimension setting
-
-**Common Uses:**
-- Size variations
-- Pulsing animations
-- Depth perception
-- Breathing effects
-
----
-
-<span id="opacity-effector"></span>
-#### Opacity Effector
-
-Control the transparency of repeated layers.
-
-**Available Modes:**
-- **Random** - Randomize opacity values
-- **Step** - Incremental opacity change per clone
-- **Noise** - Animated opacity flicker
-
-**Common Uses:**
-- Fade patterns
-- Twinkling effects
-- Depth of field simulation
-- Glitch effects
-
----
+In **Look At** mode, use the corresponding dropdown to change the target (by default, it is set to the effector null). Change the **Offset** setting to offset the rotation value.
 
 <span id="color-effector"></span>
-#### Color Effector
+#### React - Effector | Color
 
-Change colors across repeated layers.
+**Color Mode** allows you to select from the three modes within the color effector - Single Color, HSL and Multiple Colors.
 
-![Color Effector controls](images/Color.png)
-*Color Effector controls in Effects panel*
+In **Single Color** mode, use the corresponding dropdown to set the effector color.
 
-**Mode: Single Color**
-- Set one color for effector
+In **HSL** mode, use the corresponding dropdown to change the hue, saturation and lightness settings.
 
-**Mode: HSL**
-- Adjust Hue, Saturation, Lightness
-
-**Mode: Multiple Colors**
-- Enable up to 10 different colors
-- **Order:** Iterate, Blend, or Random
-- **Blend Loop Length:** End point of blend cycle
-- **Random:** Seed, Evolution, Evolution Steps
-
-**Common Uses:**
-- Color gradients
-- Rainbow effects
-- Brand color schemes
+In **Multiple Colors** mode, use the corresponding dropdown to set how many colors to use by enabling the checkbox. You can use up to 10 different colors. Then, set the color. Use the **Order** dropdown to set color sorting - Iterate, Blend or Random. With Blend selected, use **Blend - Loop Length** to set the end point of the blend loop, based on the number of layers. With random selected, use **Random - Seed**, **Random - Evolution** and **Random - Evolution Step** to adjust the randomness of the colors.
 
 ---
 
+<span id="modifiers"></span>
 ## Modifiers
 
-<span id="modifiers"></span>
-Modifiers work with all effector types (except Color has different options).
+With the exception of **React - Effector | Color**, each effector has the same four modifiers - Random, Step, Elastic and Sticky.
 
 <span id="random-modifier"></span>
 ### Random Modifier
 
-Add randomness to any effector property.
+To add randomness to any effector:
 
-**Setup:**
-1. Select Effector null
-2. Expand property section in Effect Controls
-3. Enable "Random" modifier
+1. Select the Effector null
+2. In Effect Controls panel, expand the property section
+3. Locate "Random" modifier and enable it
 4. Adjust settings:
-   - **Amount:** Maximum random variation
-   - **Seed:** Different random patterns
-   - **Evolution:** 0-360 degrees for animation
-   - **Evolution Steps:** Fewer changes = smoother loop
-
-**Perfect Loops:**
-- Set Evolution to 360°
-- Lower Evolution Steps for fewer changes
-
----
+   - Amount: Set the maximum random variation
+   - Seed: Change for different random patterns
+   - Evolution: 0-360 degrees for animation
+   - Evolution Steps: Reduce for fewer changes in loop
+5. For perfect loops:
+   - Set Evolution to 360
+   - Adjust Evolution Steps (lower = fewer changes)
 
 <span id="step-modifier"></span>
 ### Step Modifier
 
-Create progressive changes based on layer order.
+To create progressive changes based on layer order:
 
-**Setup:**
-1. Select Effector null
-2. Expand property section
+1. Select the Effector null
+2. In Effect Controls, expand property section
 3. Enable "Step" modifier
-4. Adjust Step value:
-   - **Positive:** Increases effect with each layer
-   - **Negative:** Decreases effect with each layer
-
-**Note:** First layer (index 0) multiplies by 0, last layer by maximum index
-
----
+4. Adjust the Step value:
+   - Positive: Increases effect with each layer
+   - Negative: Decreases effect with each layer
+5. Note: First layer (index 0) multiplies by 0, last layer by maximum index
 
 <span id="sticky-modifier"></span>
 ### Sticky Modifier
 
-Snap property values to specific intervals.
+To snap values to increments:
 
-**Setup:**
-1. Select Effector null
-2. Expand property section
+1. Select the Effector null
+2. In Effect Controls, expand property section
 3. Enable "Sticky" modifier
-4. Set increment value:
-   - **Rotation:** 90 for right angles
-   - **Position:** Whole numbers for grid alignment
-   - **Scale:** Common percentages (like 100)
-
-**Use Cases:**
-- Stair-step animations
-- Quantized motion
-- Retro effects
-- Grid snapping
+4. Set the increment value:
+   - For rotation: 90 for right angles
+   - For position: Whole numbers for grid alignment
+   - For scale: Common percentages (like 100)
 
 ---
 
-<span id="elastic"></span>
-### Elastic Modifier
+<span id="tracer-feature"></span>
+## Tracer Feature
 
-Add spring-like bounce to effector animations.
+To add a tracer to repeated elements:
 
-**Setup:**
-1. Create effector with animated property
-2. Enable "Elastic" modifier
-3. Adjust parameters:
-   - **Amplitude:** Bounce strength
-   - **Frequency:** Oscillation speed
-   - **Decay:** How fast bounce stops
+1. Select your React Repeater null
+2. Click the Add Tracer button
+3. A new shape layer "React Tracer 1" appears
+4. In Effect Controls for the tracer:
+   - Toggle "Close Path" for closed shapes
+   - Adjust "Trim Paths" for animation
+   - Set stroke color and width in layer properties
 
-**Use Cases:**
-- Cartoon physics
-- Spring animations
-- Natural motion
-- Overshoot effects
+For Grid Controls:
 
----
-
-<span id="falloff"></span>
-### Falloff
-
-Control how effector influence diminishes over distance.
-
-**Setup:**
-1. Select Effector null
-2. In React - Effector effect:
-   - **Shape:** Off, Circle, Box, or Linear
-   - **Size:** Falloff radius
-   - **Hold:** Falloff sharpness (0-100%)
-
-**Hold Setting:**
-- **0%:** Gradual change, few properties reach maximum
-- **50%:** Balanced falloff (default)
-- **100%:** Immediate change, all properties reach maximum within falloff
-
-**Animation Modes:**
-- **In:** Effect increases into falloff
-- **In & Out:** Effect peaks in center (default)
-- **Inverse:** Reverses effector
-
-**Easing:**
-- Linear, Ease In, Ease Out, Ease In & Out, Custom
-- Custom: Adjust Ease In/Out X and Y values
-
-**Use Cases:**
-- Localized effects
-- Ripple animations
-- Force field simulation
-- Organic motion
+1. Select the Tracer layer
+2. In Effect Controls, find "Grid Controls"
+3. Choose pattern type:
+   - Grid: Standard grid pattern
+   - Snake: Continuous line through grid
+   - Zigzag: Alternating direction pattern
+4. Adjust stroke settings in layer properties:
+   - Color
+   - Width
+   - Dash patterns if desired
 
 ---
 
-## Tools
+<span id="working-with-text-layers"></span>
+## Working with Text Layers
 
-<span id="tracer"></span>
-### Tracer
+To set up text repeaters:
 
-Create animated lines connecting repeated layers.
+1. Create or select a text layer
+2. Click any repeater button (Grid, Linear, or Radial)
+3. In the React Repeater effect controls:
+4. Find "Text Source" dropdown
+5. Choose splitting method:
+   - Letters: Each character becomes separate
+   - Letters excluding spaces: Ignores whitespace
+   - Words: Splits at spaces
+   - Lines: Splits at line breaks
+6. The grid updates automatically while typing
 
-**How to Use:**
-1. Create a repeater (any type)
-2. Select Repeater null
-3. Click **Tracer** button
+To add effects to repeated text:
 
-**Result:**
-- Shape layer "React Tracer 1" appears
-- Connected lines between layer positions
-
-**Controls:**
-- **Close Path:** Checkbox for closed shapes
-- **Trim Paths:** Animate line reveal
-- **Stroke:** Color and width in layer properties
-
-**Grid Controls (Grid Repeater only):**
-- **Grid:** Standard grid pattern
-- **Snake:** Continuous line through grid
-- **Zigzag:** Alternating direction pattern
-
-**Use Cases:**
-- Constellation patterns
-- Network diagrams
-- Motion trails
-- Connect-the-dots effects
-
----
-
-<span id="text-layers"></span>
-### Working with Text Layers
-
-Apply repeaters to text with automatic character splitting.
-
-**Setup:**
-1. Create or select text layer
-2. Click any repeater button
-3. In React Repeater effect controls, find "Text Source"
-4. Choose splitting method:
-   - **Letters:** Each character becomes separate
-   - **Letters excluding spaces:** Ignores whitespace
-   - **Words:** Splits at spaces
-   - **Lines:** Splits at line breaks
-
-**Grid updates automatically while typing!**
-
-**Adding Effects:**
 1. Must add repeater first
 2. Select text property to affect
 3. Click Add Effector
-4. Adjust as normal
+4. Adjust effects as normal
 
 ---
 
-<span id="refresh"></span>
-### Refresh
+## Utility Functions
 
-Update repeater settings and refresh layer structure.
+<span id="refresh-button"></span>
+### Refresh Button
 
-**For Repeaters:**
+For Repeaters:
+
 1. Select React Repeater null
-2. Adjust repeater controls (amount, sorting, etc.)
-3. Click **Refresh** button
-4. Repeater updates with new settings
+2. Change amounts or arrangement
+3. Click Refresh button
+4. Choose "Refresh Repeater" if prompted
+5. Wait for new layers to generate
 
-**For Effectors:**
+For Effectors:
+
 1. Select existing Effector null
-2. Hold **Ctrl/Cmd** and select new properties
-3. Click **Refresh** button
-4. New properties added to effector
+2. Hold Ctrl/Cmd and select new properties
+3. Click Refresh button
+4. Choose "Refresh Effector" if prompted
+5. New properties are added to effector
 
-**Alt+Click Refresh:** Update ALL repeaters in composition
+<span id="delete-button"></span>
+### Delete Button
 
----
+To bake current frame:
 
-<span id="delete"></span>
-### Delete
+1. Select React Repeater or Effector null
+2. Click Delete button
+3. Choose "Current Frame Only"
+4. Wait for processing
+5. React elements are removed, current state is preserved
 
-Remove React elements and optionally bake animations to keyframes.
+To bake animation:
 
-**How to Use:**
-
-**Delete Selected:**
-1. Select repeater layer, effector layer, or affected layers
-2. Click **Delete** button
-3. Choose baking mode:
-   - **No Baking:** Remove expressions, revert to original
-   - **Current Frame:** Bake current values as static
-   - **All Frames:** Bake full animation to keyframes
-
-**Delete All:**
-1. Click **Delete** button (no selection)
-2. Choose baking mode (same options)
-
-**What Gets Deleted:**
-- Repeater null layers
-- Effector layers
-- React expressions from layers
-- React pseudo effects from layers
-
-**Smart Deletion:**
-- Deleting one effector preserves others on same property
-- Deleting repeater preserves effectors
-- Position expressions preserved when repeater remains
-
-**Use Cases:**
-- Clean up finished animations
-- Bake procedural motion to keyframes
-- Remove React dependencies
-- Reduce project complexity
+1. Select React Repeater or Effector null
+2. Click Delete button
+3. Choose "Process Every Frame"
+4. Wait for processing (may take time)
+5. When finished:
+   - React elements removed
+   - Optimized keyframes created
+   - Expressions converted to keyframes
+   - Improved performance
 
 ---
 
-## Support
-
-**Need Help?**
-- [User Documentation](https://mograph-tools.github.io/react-docs/)
-- [Video Tutorial](https://youtu.be/C8R-feavAv0)
-- [Report Bug](https://github.com/mograph-tools/react/issues)
-- [Feature Request](https://github.com/mograph-tools/react/issues)
-
-**Version:** 2.2.1
-**Developer:** mograph.tools
-**Built with:** Claude Code
-
----
-
-*Copyright © 2025 mograph.tools. All rights reserved.*
+We hope you enjoy using React 2!
