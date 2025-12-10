@@ -259,6 +259,26 @@ img {
   height: auto;
   border-radius: 8px;
   margin: 24px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--light-gray);
+}
+
+/* Image captions (when using <em> after image) */
+#markdown-content img + em {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: -16px;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+/* Screenshot styling - add .screenshot class for specific styling */
+img[alt*="screenshot"],
+img[alt*="Screenshot"] {
+  border: 2px solid var(--border);
+  box-shadow: 0 8px 24px rgba(132, 113, 255, 0.15);
 }
 
 /* Horizontal Rule */

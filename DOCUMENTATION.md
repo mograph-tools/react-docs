@@ -37,6 +37,9 @@ Duplicate layers in a straight line.
 2. Enter amount in text input (e.g., "10")
 3. Click **Linear Repeater** button
 
+![Linear Repeater controls](images/Linear.png)
+*Linear Repeater controls in Effects panel*
+
 **Controls:**
 - **Amount** - Number of clones (default: 6)
 - **Spacing** - Distance between clones (default: 100px)
@@ -66,6 +69,9 @@ Arrange layers in rows and columns.
    - Two numbers: "10x5" → 10 columns, 5 rows
 3. Click **Grid Repeater** button
 
+![Grid Repeater controls](images/Grid.png)
+*Grid Repeater controls in Effects panel*
+
 **Controls:**
 - **Amount** - Grid dimensions (X × Y)
 - **Spacing** - Distance between clones (X and Y)
@@ -94,6 +100,9 @@ Distribute layers in a circle.
 1. Select layer(s) in composition
 2. Enter amount in text input (e.g., "23")
 3. Click **Radial Repeater** button
+
+![Radial Repeater controls](images/Radial.png)
+*Radial Repeater controls in Effects panel*
 
 **Controls:**
 - **Amount** - Number of clones around circle (default: 23)
@@ -136,6 +145,9 @@ Distribute layers along a custom path.
 3. Click **Path Repeater** button
 4. Select **Select existing path** radio button
 5. Click **Continue**
+
+![Path Repeater controls](images/Path.png)
+*Path Repeater controls in Effects panel*
 
 **Controls:**
 - **Amount** - Number of clones along path (default: 10)
@@ -183,6 +195,9 @@ Effectors apply dynamic transformations to repeated layers based on their clone 
 
 Control the X and Y position of repeated layers.
 
+![Position Effector controls](images/Position.png)
+*Position Effector controls in Effects panel*
+
 **Available Modes:**
 - **Random** - Randomly offset positions
 - **Step** - Incremental position change per clone
@@ -206,6 +221,9 @@ Control the X and Y position of repeated layers.
 
 Control the rotation (Z, X, Y) of repeated layers.
 
+![Rotation Effector controls](images/Rotation.png)
+*Rotation Effector controls in Effects panel*
+
 **Available Modes:**
 - **Random** - Randomize rotation angles
 - **Step** - Incremental rotation per clone
@@ -228,6 +246,9 @@ Control the rotation (Z, X, Y) of repeated layers.
 ### Scale Effector
 
 Control the uniform or independent X/Y scale of repeated layers.
+
+![Scale Effector controls](images/Scale.png)
+*Scale Effector controls in Effects panel*
 
 **Available Modes:**
 - **Random** - Randomize scale values
