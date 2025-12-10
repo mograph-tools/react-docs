@@ -42,78 +42,75 @@ The React toolbar contains (from left to right):
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
     <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
-      <circle cx="5" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="23" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+      <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
     <div style="font-size: 11px; color: #666;">Linear</div>
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
     <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
-      <circle cx="5" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="23" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="5" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="23" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="5" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="23" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+      <circle cx="5" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="23" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="23" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
     <div style="font-size: 11px; color: #666;">Grid</div>
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
     <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
-      <circle cx="14" cy="4" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="22.5" cy="9.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="24" cy="18" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="24" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="5.5" cy="18.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="4" cy="10" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+      <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="4" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="10" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="18" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="24" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="22.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
     <div style="font-size: 11px; color: #666;">Radial</div>
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
     <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
-      <path d="M 6 20 C 6 9, 13 11, 14 14 C 15 17, 22 19, 22 8" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="6" cy="20" r="2" fill="#2ACCFF"/>
-      <circle cx="22" cy="8" r="2" fill="#2ACCFF"/>
+      <path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="6" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="22" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
     <div style="font-size: 11px; color: #666;">Path</div>
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
     <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
-      <circle cx="14" cy="14" r="10.5" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <line x1="14" y1="8" x2="14" y2="14" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="8" y1="14" x2="14" y2="14" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="14" cy="14" r="10.5" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="14" y1="8" x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="8" y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
     </svg>
     <div style="font-size: 11px; color: #666;">Effector</div>
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
     <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
-      <line x1="3.5" y1="3.5" x2="3.5" y2="24.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="3.5" y1="24.5" x2="24.5" y2="24.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="24.5" y1="24.5" x2="24.5" y2="3.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="24.5" y1="3.5" x2="10.5" y2="3.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="10.5" y1="3.5" x2="10.5" y2="10.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="10.5" y1="10.5" x2="17.5" y2="10.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="17.5" y1="10.5" x2="17.5" y2="17.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="17.5" y1="17.5" x2="10.5" y2="17.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="10.5" y1="17.5" x2="10.5" y2="24.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
+      <rect x="3.5" y="3.5" width="21" height="21" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="3.5" y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="3.5" y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="10.5" y1="3.5" x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="17.5" y1="3.5" x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
     </svg>
     <div style="font-size: 11px; color: #666;">Tracer</div>
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
     <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
-      <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div style="font-size: 11px; color: #666;">Refresh</div>
   </div>
   <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
     <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
-      <circle cx="14" cy="14" r="11.67" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <line x1="8.5" y1="8.5" x2="19.5" y2="19.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="19.5" y1="8.5" x2="8.5" y2="19.5" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="14" cy="14" r="11.67" fill="none" stroke="#EC5E5E" stroke-width="1.2"/>
+      <line x1="9.33" y1="9.33" x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="18.67" y1="9.33" x2="9.33" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
     </svg>
     <div style="font-size: 11px; color: #666;">Delete</div>
   </div>
