@@ -33,23 +33,17 @@ The React panel will appear in your After Effects workspace.
 <span id="toolbar-interface"></span>
 ## Toolbar Interface
 
-The React toolbar contains (from left to right):
-
-<div style="display: flex; gap: 12px; padding: 20px; background: #f9f9f9; border-radius: 8px; flex-wrap: wrap; margin: 24px 0;">
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <div style="width: 80px; height: 32px; background: #fff; border: 1px solid #ddd; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 14px;">123</div>
-    <div style="font-size: 11px; color: #666;">Text Input</div>
-  </div>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
+<div style="display: flex; gap: 12px; padding: 32px 20px; background: #e8e8e8; border-radius: 8px; flex-wrap: wrap; justify-content: center; margin: 32px 0;">
+  <div style="width: 80px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 18px; font-family: 'Courier New', monospace;">123</div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
       <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
-    <div style="font-size: 11px; color: #666;">Linear</div>
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
       <circle cx="5" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="14" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="23" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
@@ -60,10 +54,9 @@ The React toolbar contains (from left to right):
       <circle cx="14" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="23" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
-    <div style="font-size: 11px; color: #666;">Grid</div>
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
       <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="5.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="4" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
@@ -72,61 +65,193 @@ The React toolbar contains (from left to right):
       <circle cx="24" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="22.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
-    <div style="font-size: 11px; color: #666;">Radial</div>
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
       <path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="6" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
       <circle cx="22" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
     </svg>
-    <div style="font-size: 11px; color: #666;">Path</div>
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
       <circle cx="14" cy="14" r="10.5" fill="none" stroke="#8471FF" stroke-width="1.2"/>
       <line x1="14" y1="8" x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
       <line x1="8" y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
     </svg>
-    <div style="font-size: 11px; color: #666;">Effector</div>
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
       <rect x="3.5" y="3.5" width="21" height="21" fill="none" stroke="#8471FF" stroke-width="1.2"/>
       <line x1="3.5" y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/>
       <line x1="3.5" y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/>
       <line x1="10.5" y1="3.5" x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
       <line x1="17.5" y1="3.5" x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
     </svg>
-    <div style="font-size: 11px; color: #666;">Tracer</div>
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
       <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <div style="font-size: 11px; color: #666;">Refresh</div>
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <svg width="32" height="32" viewBox="0 0 28 28" style="background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 2px;">
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
       <circle cx="14" cy="14" r="11.67" fill="none" stroke="#EC5E5E" stroke-width="1.2"/>
       <line x1="9.33" y1="9.33" x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
       <line x1="18.67" y1="9.33" x2="9.33" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
     </svg>
-    <div style="font-size: 11px; color: #666;">Delete</div>
   </div>
 </div>
 
-**Toolbar Controls:**
+The React toolbar provides all the controls you need to create parametric cloning systems in After Effects.
 
-1. **Text Input Box** - Enter amount of layers
-2. **Linear Repeater** - Repeat in a line
-3. **Grid Repeater** - Repeat in rows and columns
-4. **Radial Repeater** - Repeat in a circle
-5. **Path Repeater** - Repeat along a path
-6. **Add Effector** - Apply effects to properties
-7. **Tracer** - Connect layers with lines
-8. **Refresh** - Update repeaters and effectors
-9. **Delete** - Remove React elements
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 60px; height: 42px; background: #2a2a2a; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px; font-family: 'Courier New', monospace; flex-shrink: 0;">123</div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Text Input Box</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Enter the amount of layers. For Grid, separate X & Y values with x, *, -, comma or space. For example: 5x4, 5*4, 5-4, 5,4 or 5 4.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Linear Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a line. Enter the amount of repeated layers in the text input box.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="5" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="23" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="23" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Grid Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a grid. Enter the amount of repeated layers in the text input box. Separate X & Y values with x, *, -, comma or space. For example: 5x4, 5*4, 5-4, 5,4 or 5 4.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="4" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="10" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="18" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="24" cy="18" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="22.5" cy="9" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Radial Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a circle. Enter the amount of repeated layers in the text input box.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="6" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="22" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Path Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat along a path. A popup will appear where you can either select an existing path layer or create a new straight line or bezier path. Enter the amount of repeated layers in the text input box.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="14" cy="14" r="10.5" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="14" y1="8" x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="8" y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Add Effector</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Add an Effector to one or more selected properties. Layer property in a repeater? Select just one property to apply it to the same properties in the repeater. Or hold ALT to apply to the selected layer only.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <rect x="3.5" y="3.5" width="21" height="21" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="3.5" y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="3.5" y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="10.5" y1="3.5" x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="17.5" y1="3.5" x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Add Tracer</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">There are two ways to apply a Tracer:<br><br>1) Repeater Tracer - Select one React - Repeater layer and press the Add Tracer button to apply to all layers assigned to that repeater.<br><br>2) Layer Tracer - In order, select more than one layer and press the Add Tracer button to apply to those layers. Do not include any React - Repeater layers in your selection.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Refresh</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">There are two ways to use the Refresh button:<br><br>1) Repeater Refresh - Select one React - Repeater layer only and press Refresh. The X + Y amount and the sorting mode will update, if changes have been made. ├ and └ will also update if layer order has been changed.<br><br>2) Effector Refresh - Select one React - Effector layer, along with one or more properties from another layer. Press Refresh to add the new property to that effector. If the selected property is from a layer in a repeater, the effector will be applied to every property in that repeater. Hold Alt to apply to the selected layer only.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="14" cy="14" r="11.67" fill="none" stroke="#EC5E5E" stroke-width="1.2"/>
+        <line x1="9.33" y1="9.33" x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="18.67" y1="9.33" x2="9.33" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Delete</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Remove React effects and layers while preserving your animation through keyframe baking.<br><br><strong>Bake Current Frame:</strong> Select a React Repeater or Effector null and click Delete. Choose "Current Frame Only" to remove the React elements while preserving the current state. This is useful for finalizing a static composition.<br><br><strong>Bake Animation:</strong> Choose "Process Every Frame" to convert the entire animation to keyframes. This may take time for complex animations but results in optimized keyframes with improved performance. All expressions are converted to keyframes and React elements are removed.</p>
+    </div>
+  </div>
+</div>
 
 ---
 
