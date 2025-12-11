@@ -9,7 +9,7 @@ React is a powerful After Effects extension that enables parametric cloning and 
 - 4 Modifiers (Random, Step, Sticky, Elastic)
 - Advanced Tools (Tracer, Refresh, Delete)
 
-**Video Tutorial:** [Watch on YouTube](https://youtu.be/C8R-feavAv0){:target="_blank"}
+**Video Tutorial:** [Watch on YouTube](https://youtu.be/C8R-feavAv0)
 
 ---
 
@@ -19,8 +19,8 @@ React is a powerful After Effects extension that enables parametric cloning and 
 React is a ZXP extension and should be installed using aescripts' ZXP installer:
 
 **Installation Steps:**
-1. Download React from [aescripts.com](https://aescripts.com/react/){:target="_blank"}
-2. Install using [ZXP Installer](https://aescripts.com/learn/post/zxp-installer/){:target="_blank"}
+1. Download React from [aescripts.com](https://aescripts.com/react/)
+2. Install using [ZXP Installer](https://aescripts.com/learn/post/zxp-installer/)
 3. Restart After Effects
 4. Open: **Window → Extensions → React**
 
