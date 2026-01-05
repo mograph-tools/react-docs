@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adobe Font Test</title>
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/igw2umj.css">
+
+  <style>
+    body {
+      padding: 40px;
+      background: #1f1f1f;
+      color: #e0e0e0;
+    }
+
+    .test-section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+    }
+
+    .font-neuzeit {
+      font-family: neuzeit-grotesk, sans-serif;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .font-neuzeit-bold {
+      font-family: neuzeit-grotesk, sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .font-kansas {
+      font-family: new-kansas, serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .font-kansas-swash {
+      font-family: new-kansas-swash, serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .font-kansas-extra {
+      font-family: new-kansas-extra-swash, serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 36px;
+    }
+
+    .fallback {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 18px;
+      color: #ff6b6b;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="font-family: new-kansas, serif; font-weight: 700; font-style: italic; font-size: 48px; color: #8471FF;">
+    Adobe Font Loading Test
+  </h1>
+
+  <div class="test-section">
+    <h2 style="color: #2ACCFF; margin-bottom: 20px;">Neuzeit Grotesk Tests</h2>
+    <p class="font-neuzeit">This text should be in <strong>neuzeit-grotesk regular (400)</strong></p>
+    <p class="font-neuzeit-bold">This text should be in <strong>neuzeit-grotesk bold (700)</strong></p>
+    <p class="fallback">If you see Georgia font above, neuzeit-grotesk is NOT loading</p>
+  </div>
+
+  <div class="test-section">
+    <h2 style="color: #2ACCFF; margin-bottom: 20px;">New Kansas Tests</h2>
+    <p class="font-kansas">This heading should be in New Kansas Bold Italic</p>
+    <p class="font-kansas-swash">This heading should be in New Kansas Swash</p>
+    <p class="font-kansas-extra">This heading should be in New Kansas Extra Swash</p>
+    <p class="fallback">If you see Georgia font above, new-kansas is NOT loading</p>
+  </div>
+
+  <div class="test-section">
+    <h2 style="color: #2ACCFF; margin-bottom: 20px;">Cache Busting Instructions</h2>
+    <p style="font-family: neuzeit-grotesk, sans-serif; font-size: 16px; line-height: 1.7;">
+      If the fonts are not loading correctly, try these steps:
+    </p>
+    <ul style="font-family: neuzeit-grotesk, sans-serif; font-size: 16px; line-height: 1.7;">
+      <li><strong>Chrome/Edge:</strong> Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows)</li>
+      <li><strong>Safari:</strong> Cmd+Option+R</li>
+      <li><strong>Firefox:</strong> Cmd+Shift+R (Mac) or Ctrl+F5 (Windows)</li>
+      <li><strong>Or:</strong> Open DevTools (F12) → Right-click refresh button → "Empty Cache and Hard Reload"</li>
+    </ul>
+  </div>
+
+  <div class="test-section">
+    <h2 style="color: #2ACCFF; margin-bottom: 20px;">Font Loading Status</h2>
+    <div id="font-status" style="font-family: neuzeit-grotesk, sans-serif; font-size: 16px;"></div>
+  </div>
+
+  <script>
+    // Check if fonts are loaded
+    document.fonts.ready.then(function() {
+      const statusDiv = document.getElementById('font-status');
+      const neuzeitLoaded = document.fonts.check('16px neuzeit-grotesk');
+      const kansasLoaded = document.fonts.check('700 italic 36px new-kansas');
+
+      let status = '<p><strong>Font Loading Status:</strong></p><ul>';
+      status += `<li>neuzeit-grotesk: ${neuzeitLoaded ? '✅ LOADED' : '❌ NOT LOADED'}</li>`;
+      status += `<li>new-kansas (700 italic): ${kansasLoaded ? '✅ LOADED' : '❌ NOT LOADED'}</li>`;
+      status += '</ul>';
+
+      if (!neuzeitLoaded || !kansasLoaded) {
+        status += '<p style="color: #ff6b6b; font-weight: 700;">⚠️ Fonts not loading! Try hard refresh (Cmd+Shift+R)</p>';
+      } else {
+        status += '<p style="color: #51cf66; font-weight: 700;">✅ All fonts loaded successfully!</p>';
+      }
+
+      statusDiv.innerHTML = status;
+    });
+  </script>
+</body>
+</html>

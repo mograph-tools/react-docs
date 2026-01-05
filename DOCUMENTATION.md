@@ -1,5 +1,3 @@
-# React - Parametric Cloning for After Effects
-
 <span id="overview"></span>
 ## Overview
 
@@ -7,17 +5,22 @@ React is a powerful After Effects extension that enables parametric cloning and 
 
 **Key Features:**
 - 4 Repeater Types (Linear, Grid, Radial, Path)
-- 7 Effector Properties (Position, Rotation, Scale, Opacity, Color)
-- 3 Modifiers (Falloff, Sticky, Elastic)
+- Effectors for any keyframeable property
+- 4 Modifiers (Random, Step, Sticky, Elastic)
 - Advanced Tools (Tracer, Refresh, Delete)
+
+**Video Tutorial:** [Watch on YouTube](https://youtu.be/C8R-feavAv0)
 
 ---
 
 <span id="installation"></span>
 ## Installation
 
+React is a ZXP extension and should be installed using aescripts' ZXP installer:
+
+**Installation Steps:**
 1. Download React from [aescripts.com](https://aescripts.com/react/)
-2. Run the installer
+2. Install using [ZXP Installer](https://aescripts.com/learn/post/zxp-installer/)
 3. Restart After Effects
 4. Open: **Window → Extensions → React**
 
@@ -25,509 +28,572 @@ The React panel will appear in your After Effects workspace.
 
 ---
 
+<span id="toolbar-interface"></span>
+## Toolbar Interface
+
+<div style="display: flex; gap: 12px; padding: 32px 20px; background: #e8e8e8; border-radius: 8px; flex-wrap: wrap; justify-content: center; margin: 32px 0;">
+  <div style="width: 80px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 18px; font-family: 'Courier New', monospace;">123</div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <circle cx="5" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="23" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="23" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="22.5" cy="9.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="22.5" cy="18.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="14" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5.5" cy="18.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="5.5" cy="9.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="6" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <circle cx="22" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <circle cx="14" cy="14" r="10.5" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="14" y1="8" x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="8" y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <rect x="3.5" y="3.5" width="21" height="21" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="3.5" y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="3.5" y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="10.5" y1="3.5" x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+      <line x1="17.5" y1="3.5" x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div style="width: 56px; height: 56px; background: #2a2a2a; border: 1px solid rgba(132, 113, 255, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <circle cx="14" cy="14" r="11.67" fill="none" stroke="#EC5E5E" stroke-width="1.2"/>
+      <line x1="9.33" y1="9.33" x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="18.67" y1="9.33" x2="9.33" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+The React toolbar provides all the controls you need to create parametric cloning systems in After Effects.
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 60px; height: 42px; background: #2a2a2a; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px; font-family: 'Courier New', monospace; flex-shrink: 0;">123</div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Text Input Box</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Enter the amount of layers. For Grid, separate X & Y values with x, *, -, comma or space. For example: 5x4, 5*4, 5-4, 5,4 or 5 4.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Linear Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a line. Enter the amount of repeated layers in the text input box.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="5" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="23" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="23" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Grid Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a grid. Enter the amount of repeated layers in the text input box. Separate X & Y values with x, *, -, comma or space. For example: 5x4, 5*4, 5-4, 5,4 or 5 4.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="14" cy="4" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="22.5" cy="9.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="22.5" cy="18.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="14" cy="24" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5.5" cy="18.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="5.5" cy="9.5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px; 0; font-size: 18px; color: #303030;">Radial Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a circle. Enter the amount of repeated layers in the text input box.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="6" cy="23" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+        <circle cx="22" cy="5" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Path Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat along a path. A popup will appear where you can either select an existing path layer or create a new straight line or bezier path. Enter the amount of repeated layers in the text input box.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="14" cy="14" r="10.5" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="14" y1="8" x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="8" y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Add Effector</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Add an Effector to one or more selected properties. Layer property in a repeater? Select just one property to apply it to the same properties in the repeater. Or hold ALT to apply to the selected layer only.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <rect x="3.5" y="3.5" width="21" height="21" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="3.5" y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="3.5" y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="10.5" y1="3.5" x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="17.5" y1="3.5" x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Add Tracer</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">There are two ways to apply a Tracer:<br><br>1) Repeater Tracer - Select one React - Repeater layer and press the Add Tracer button to apply to all layers assigned to that repeater.<br><br>2) Layer Tracer - In order, select more than one layer and press the Add Tracer button to apply to those layers. Do not include any React - Repeater layers in your selection.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Refresh</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">There are two ways to use the Refresh button:<br><br>1) Repeater Refresh - Select one React - Repeater layer only and press Refresh. The X + Y amount and the sorting mode will update, if changes have been made. ├ and └ will also update if layer order has been changed.<br><br>2) Effector Refresh - Select one React - Effector layer, along with one or more properties from another layer. Press Refresh to add the new property to that effector. If the selected property is from a layer in a repeater, the effector will be applied to every property in that repeater. Hold Alt to apply to the selected layer only.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
+  <div style="display: flex; align-items: flex-start; gap: 16px;">
+    <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="28" height="28" viewBox="0 0 28 28">
+        <circle cx="14" cy="14" r="11.67" fill="none" stroke="#EC5E5E" stroke-width="1.2"/>
+        <line x1="9.33" y1="9.33" x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="18.67" y1="9.33" x2="9.33" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Delete</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Remove React effects and layers while preserving your animation through keyframe baking.<br><br><strong>Bake Current Frame:</strong> Select a React Repeater or Effector null and click Delete. Choose "Current Frame Only" to remove the React elements while preserving the current state. This is useful for finalizing a static composition.<br><br><strong>Bake Animation:</strong> Choose "Process Every Frame" to convert the entire animation to keyframes. This may take time for complex animations but results in optimized keyframes with improved performance. All expressions are converted to keyframes and React elements are removed.</p>
+    </div>
+  </div>
+</div>
+
+---
+
+<span id="repeaters"></span>
 ## Repeaters
+
+### Setting up a repeater
+
+Click any of the repeater buttons to set up a repeater.
+
+A Repeater null is created each time a repeater button is clicked. As well as changing position, scale and rotation for the repeater, there is also an effect on this null which affects amount, spacing and sorting modes, as well as a few other things.
+
+Select your layer or layers that you want to be repeated before clicking. Or leave your layers unselected to create nulls that will then be used in the repeater.
+
+Selecting two or more layers will result in them iterating through the repeater by default. Change the sorting mode by clicking on the Repeater null, changing the Sort mode and clicking the Refresh button in the React toolbar.
+
+<span id="setting-repeater-amounts"></span>
+### Setting the amount of repeated layers
+
+To set the amount of layers in a repeater, there are a few options:
+
+1. Enter a number in the text input field before clicking the repeater button. For the grid repeater, you can use just 1 number if you want the same amount in X and Y. Separate two numbers with a space, comma, *, - or _ to input X and Y values. For the linear, radial and path repeaters, just the first number in the text input field will be used.
+2. Create a repeater first. Then select the Repeater null and change the amount. Layers will update automatically, however you may need to press the Refresh button in the React toolbar to add or remove layers from the repeater.
+3. Leave the text input field blank and default values will be used. These can be changed in the Preferences menu.
+
+### Repeater Settings
+
+Each of the repeaters behave in similar ways.
+
+Select the Repeater null and you will see the repeater controls in the Effects panel.
+
+#### Amount
+
+Change the amount of layers in the repeater. Layers will update automatically, however you may need to press the Refresh button in the React toolbar to add or remove layers from the repeater.
+
+#### Spacing/Radius
+
+Change the amount of spacing between layers in the repeater. Or the radius of the circle for radial repeaters.
+
+You can also change the spacing of the repeater by changing the Repeater null's scale.
+
+#### Repeat from
+
+There are two options - Centre or First Layer. This determines the anchor point of the repeater and how spacing affects the layers. Selecting Centre will change the positions of the repeater layers so that the repeater null is in the centre. Alternatively, selecting First Layer will place the repeater null in the same position as the first layer.
+
+<span id="sorting-modes"></span>
+#### Sorting
+
+For repeaters using two or more different layers, you may want to change the sorting mode.
+
+Select from the dropdown then press the Refresh button to update.
+
+**Iterate** arranges layers in sequential order. For example, if there are 3 different layers in a repeater, they would be arranged like this - 1, 2, 3, 1, 2, 3, 1, 2, 3
+
+**Cluster** groups the same layers into groups. For example, for 3 different layers in a repeater, they would be arranged like this - 1, 1, 1, 2, 2, 2, 3, 3, 3
+
+**Random** arranges layer randomly. Press the Refresh button multiple times to give different random arrangements.
+
+**Rows and Columns (Grid only)** arranges layers into rows or columns. This will only work for grid repeaters.
+
+Remember to press Refresh after updating the sorting mode.
 
 <span id="linear-repeater"></span>
 ### Linear Repeater
 
-Duplicate layers in a straight line.
+Arranges layers in a line.
 
-**How to Use:**
-1. Select layer(s) in composition
-2. Enter amount in text input (e.g., "10")
-3. Click **Linear Repeater** button
-
-**Controls:**
-- **Amount** - Number of clones (default: 6)
-- **Spacing** - Distance between clones (default: 100px)
-- **Rotation** - Rotation angle for entire array
-- **Scale** - Scale multiplier for entire array
-- **Repeat from** - Start from first layer or center pattern
-- **Offset** - Manual position adjustment
-
-**Shift-Click:** Opens documentation to this section
-
-**Use Cases:**
-- Title sequences with staggered text
-- Fence posts or pillars
-- Animation steps
-
----
+![Linear Repeater Controls](images/Linear.png)
 
 <span id="grid-repeater"></span>
 ### Grid Repeater
 
-Arrange layers in rows and columns.
+Arranges layers in a grid shape.
 
-**How to Use:**
-1. Select layer(s) in composition
-2. Enter dimensions in text input:
-   - Single number: "10" → 10×10 grid
-   - Two numbers: "10x5" → 10 columns, 5 rows
-3. Click **Grid Repeater** button
+![Grid Repeater Controls](images/Grid.png)
 
-**Controls:**
-- **Amount** - Grid dimensions (X × Y)
-- **Spacing** - Distance between clones (X and Y)
-- **Rotation** - Rotation angle for entire grid
-- **Scale** - Scale multiplier for entire grid
-- **Repeat from** - Position grid from corner or center
-- **Offset** - Manual position adjustment (X and Y)
-- **Honeycomb Offset** - Offset alternate rows for honeycomb pattern
-
-**Shift-Click:** Opens documentation to this section
-
-**Use Cases:**
-- Tiled backgrounds
-- Crowd duplication
-- Photo grids
-- Honeycomb patterns
-
----
+The Honeycomb Offset control allows you to change the X position of every other row.
 
 <span id="radial-repeater"></span>
 ### Radial Repeater
 
-Distribute layers in a circle.
+Arranges layers in a circle shape.
 
-**How to Use:**
-1. Select layer(s) in composition
-2. Enter amount in text input (e.g., "23")
-3. Click **Radial Repeater** button
+![Radial Repeater Controls](images/Radial.png)
 
-**Controls:**
-- **Amount** - Number of clones around circle (default: 23)
-- **Radius** - Distance from center point
-- **Rotation** - Starting rotation angle
-- **Scale** - Scale multiplier for entire array
-- **Start Angle** - Where circle begins (default: 0°)
-- **End Angle** - Where circle ends (default: 360°)
-- **Offset** - Rotational offset adjustment
-
-**Shift-Click:** Opens documentation to this section
-
-**Use Cases:**
-- Clock numbers
-- Circular menus
-- Mandala patterns
-- Radial progress indicators
-
----
+The radial and path repeaters have trim settings, which affect the positioning of layers on the circle or path. **Start** and **End** settings change where the first or last layers are positioned and updates the layers between accordingly. With **Loop** enabled, layers can be looped across the circle or path seamlessly by changing the **Offset** setting. With **Loop** disabled, layers are constricted to the start and end points of the circle or path.
 
 <span id="path-repeater"></span>
 ### Path Repeater
 
-Distribute layers along a custom path.
+There are two ways to set up a path repeater - select path or create path.
 
-**How to Use:**
+![Path Repeater Controls](images/Path.png)
 
-**Option 1: Create New Path**
-1. Select layer(s) in composition
-2. Enter amount in text input (e.g., "10")
-3. Click **Path Repeater** button
-4. Select **Create new path** radio button
-5. Choose number of points (3-10)
-6. Enable **Use bezier curves** for smooth curves
-7. Click **Continue**
+Click the path repeater button and a dialog window will appear.
 
-**Option 2: Select Existing Path**
-1. Select layer(s) in composition
-2. Select a shape path property in timeline
-3. Click **Path Repeater** button
-4. Select **Select existing path** radio button
-5. Click **Continue**
+**Select Path** - With the dialog window open, select an existing path in your composition (ensure the path is selected, not the layer). Then click **Select Path**
 
-**Controls:**
-- **Amount** - Number of clones along path (default: 10)
-- **Offset** - Shift position along path (0-100%)
-- **Rotation** - Rotation angle for entire array
-- **Scale** - Scale multiplier for entire array
+**Create Path** - Again, with the dialog window open, select how many points you'd like the new path to have and whether the points should be bezier. Then click **Create Path.** The new path will run left to right be default, however you can change the path in the same way you normally would.
 
-**Shift-Click:** Opens documentation to this section
-
-**Use Cases:**
-- Text on path
-- Following motion graphics
-- Custom distribution patterns
-- Organic animations
+The path repeater also has trim settings, which are explained in the radial repeater above.
 
 ---
 
+<span id="effectors"></span>
 ## Effectors
 
-<span id="effector-overview"></span>
-### Effector Overview
+Effectors can be used to change property values across many layers.
 
-Effectors apply dynamic transformations to repeated layers based on their clone index or distance from an effector layer.
+In React 2, you can now apply effectors to almost any property in After Effects.
 
-**How Effectors Work:**
-1. Create a repeater (Linear, Grid, Radial, or Path)
-2. Select one or more properties in the Effects Controls panel
-3. Click **Effector** button
-4. An effector layer is created with controls
-5. Move/animate the effector to affect repeated layers
+### Adding an effector
 
-**Effect Modes:**
-- **Random** - Randomize property values
-- **Step** - Incremental steps per clone
-- **Noise** - Animated noise patterns
-- **Attract/Repel** - Physics-based attraction (Position only)
-- **Look At** - Aim rotation at target (Rotation Z only)
+Select any layer property (or properties) that accepts keyframes. This could be position, scale, rotation, opacity, color, start, end, for example.
 
-**Alt-Click Effector Button:** Creates effector without requiring property selection
+Then, press the **Add Effector** button.
 
----
+If the property is part of a layer within a repeater, the effector will be added to every layer within that repeater. For example, to add an effector to the position property of all layers in a grid repeater, we only need to select one position property, not all of them. This makes the process of selecting properties much quicker.
 
-<span id="position-effector"></span>
-### Position Effector
+Perhaps a layer is within a repeater but you don't want the effector to be added to all the properties? That's fine, just hold ALT when clicking the **Add Effector** button.
 
-Control the X and Y position of repeated layers.
+You can also select more than one property (for example, scale and opacity).
 
-**Available Modes:**
-- **Random** - Randomly offset positions
-- **Step** - Incremental position change per clone
-- **Noise** - Animated turbulent motion
-- **Attract/Repel** - Pull layers toward or push away from effector
+### Effector Settings
 
-**Special Controls:**
-- **Attract/Repel Amount** - Strength of attraction (negative = repel)
-- **Target** - Layer to attract to (default: effector layer)
+After clicking the **Add Effector** button, two new layers will appear. One is the Effector null, which controls all the settings, and the other is the guide, which is for falloff visualisation (this only appears in the composition window when Falloff Shape is not Off)
 
-**Common Uses:**
-- Scattered text layouts
-- Organic motion
-- Physics simulations
-- Procedural animation
+Depending on the amount of properties selected, you will see at least two effects on the Effector null - the **React - Effector** effect (which are the main effector controls) and the property effect (for example, **React - Effector | Position**, which control that property within an effector ).
 
----
+#### React - Effector
 
-<span id="rotation-effector"></span>
-### Rotation Effector
+These are the main controls for the effector and work the same no matter which property has been selected.
 
-Control the rotation (Z, X, Y) of repeated layers.
-
-**Available Modes:**
-- **Random** - Randomize rotation angles
-- **Step** - Incremental rotation per clone
-- **Noise** - Animated rotation turbulence
-- **Look At** (Rotation Z only) - Aim layers at target
-
-**Special Controls (Rotation Z):**
-- **Look At Offset** - Angle offset when aiming at target
-- **Target** - Layer to look at (default: effector layer)
-
-**Common Uses:**
-- Text rotation variations
-- Camera facing elements
-- Animated turbulence
-- Aim constraints
-
----
-
-<span id="scale-effector"></span>
-### Scale Effector
-
-Control the uniform or independent X/Y scale of repeated layers.
-
-**Available Modes:**
-- **Random** - Randomize scale values
-- **Step** - Incremental scale change per clone
-- **Noise** - Animated scale turbulence
-
-**Controls:**
-- **Uniform Scale** - Checkbox to link X and Y scale
-- **X / Y Scale** - Independent scale controls (when uniform disabled)
-
-**Common Uses:**
-- Size variations
-- Pulsing animations
-- Depth perception
-- Breathing effects
-
----
-
-<span id="opacity-effector"></span>
-### Opacity Effector
-
-Control the transparency of repeated layers.
-
-**Available Modes:**
-- **Random** - Randomize opacity values
-- **Step** - Incremental opacity change per clone
-- **Noise** - Animated opacity flicker
-
-**Common Uses:**
-- Fade patterns
-- Twinkling effects
-- Depth of field simulation
-- Glitch effects
-
----
-
-## Modifiers
+**Amount** controls the amount of effect the effector controls have. It is set to 100% by default.
 
 <span id="falloff"></span>
-### Falloff
+Under **Falloff**, we can control whether the effector uses a proximity falloff, which shape to use and the size of the falloff. By default, **Shape** is set to Off. Select Circle, Box or Linear to see a visualisation in the comp window. Change the falloff position, scale and rotation by moving and scaling the Effector null. As well as changing the null scale, you can also use **Size**.
 
-Control how effector influence diminishes over distance.
+**Hold** affects the falloff sharpness is set to 50% by default. When set to 0%, there is a gradual change, with very few properties reaching maximum effector values. When set to 100%, there is an immediate change, with all properties reaching maximum effector values within the falloff.
 
-**How to Enable:**
-1. Create an effector on repeated layers
-2. Check **Falloff Enable** checkbox on effector layer
-3. Adjust **Falloff Radius** slider
-4. Choose **Falloff Shape**
+Under **Animation**, we can change to In, In & Out or Inverse, which reverses the effector. We can also change the **Easing** - by default, Ease In & Out is selected. There are options for Linear, Ease In, Ease Out, Ease In & Out and Custom.
 
-**Falloff Shapes:**
-- **Linear** - Straight linear falloff
-- **Smooth** - Ease in/out curve
-- **Round** - Circular dropoff
+If **Custom Easing** is selected, use the settings here to tune the easing. It's worth playing with these settings to understand how they work. Imagine a graph similar to the Curves effect in After Effect - Ease In - X and Y moves the lower left point, Ease Out - X and Y moves the upper right point.
 
-**Controls:**
-- **Falloff Radius** - Distance where influence ends
-- **Falloff Shape** - Curve type
+### Effector Property Controls
 
-**Use Cases:**
-- Localized effects
-- Ripple animations
-- Force field simulation
-- Organic motion
+The second effect on the Effector null is the effector property controls, which control individual properties (position, scale, opacity, for example) within the effector.
 
----
+If you have selected more than one property before clicking **Add Effector**, each property will have it's own effect controls here.
 
-<span id="sticky"></span>
-### Sticky
+Each property has a type. It could be a 3D, 2D or 1D value, or a color value. For example, the position property is a 3D value (when the layer is 3D) and opacity is a 1D value. React will apply the relevant effector property control to a property.
 
-Snap property values to specific intervals.
+With the exception of the Color effector controls, most of the controls have similar functionality and modifiers. However, there are some special cases - position, scale, rotation and color.
 
-**How to Enable:**
-1. Create an effector on repeated layers
-2. Check **Sticky** checkbox on effector layer
-3. Adjust **Sticky Value** slider
+<span id="position-effector"></span>
+#### React - Effector | Position
 
-**How It Works:**
-- Property values snap to multiples of the sticky value
-- Example: Sticky Value = 45 → Rotation snaps to 0°, 45°, 90°, 135°, etc.
-- Works with all effector properties (Position, Rotation, Scale, Opacity)
+![Position Effector Controls](images/Position.png)
 
-**Use Cases:**
-- Stair-step animations
-- Quantized motion
-- Retro effects
-- Grid snapping
+**Mode** allows you to select from the two modes within the position effector - Relative/Absolute and Attract/Repel.
 
----
+In **Relative/Absolute** mode, use the corresponding dropdown to change the settings in X, Y and Z. You can set each dimension to be relative to the layer's current position or absolute position.
 
-<span id="elastic"></span>
-### Elastic
+In **Attract/Repel** mode, use the corresponding dropdown to change the target (by default, it is set to the effector null). Change the **Attract/Repel** setting to either attract layers (negative values) to the target layer, or repel (positive values). You can also modify this per X and Y dimension by setting the **X - Multiplier** and **Y - Multiplier**.
 
-Add spring-like bounce to effector animations.
+#### React - Effector | Scale
 
-**How to Enable:**
-1. Create an effector with animated property
-2. Check **Elastic Enable** checkbox on effector layer
-3. Adjust elastic parameters
+![Scale Effector Controls](images/Scale.png)
 
-**Controls:**
-- **Elastic Amplitude** - Bounce strength multiplier (default: 1)
-- **Elastic Frequency** - Oscillation speed, higher = more bounces (default: 2)
-- **Elastic Decay** - Decay time in frames, lower = faster decay (default: 0.5)
+**Uniform Scale** is enabled by default. Disable it to affect scale on individual dimensions.
 
-**How It Works:**
-- Detects when effector motion stops
-- Adds spring oscillation that decays exponentially
-- Works bidirectionally (forward and backward motion)
-- Respects actual position changes for natural feel
+Change the settings in X, Y and Z. You can set each dimension to be relative to the layer's current position or absolute position.
 
-**Use Cases:**
-- Cartoon physics
-- Spring animations
-- Natural motion
-- Overshoot effects
+<span id="rotation-effector"></span>
+#### React - Effector | Rotation
+
+![Rotation Effector Controls](images/Rotation.png)
+
+**Mode** allows you to select from the two modes within the rotation effector - Relative/Absolute and Look At.
+
+In **Relative/Absolute** mode, use the corresponding dropdown to change the settings in X, Y and Z. You can set each dimension to be relative to the layer's current rotation or absolute rotation. The X and Y settings will only affect 3D layers.
+
+In **Look At** mode, use the corresponding dropdown to change the target (by default, it is set to the effector null). Change the **Offset** setting to offset the rotation value.
+
+<span id="color-effector"></span>
+#### React - Effector | Color
+
+![Color Effector Controls](images/Color.png)
+
+**Color Mode** allows you to select from the three modes within the color effector - Single Color, HSL and Multiple Colors.
+
+In **Single Color** mode, use the corresponding dropdown to set the effector color.
+
+In **HSL** mode, use the corresponding dropdown to change the hue, saturation and lightness settings.
+
+In **Multiple Colors** mode, use the corresponding dropdown to set how many colors to use by enabling the checkbox. You can use up to 10 different colors. Then, set the color. Use the **Order** dropdown to set color sorting - Iterate, Blend or Random. With Blend selected, use **Blend - Loop Length** to set the end point of the blend loop, based on the number of layers. With random selected, use **Random - Seed**, **Random - Evolution** and **Random - Evolution Step** to adjust the randomness of the colors.
 
 ---
 
-## Tools
+<span id="modifiers"></span>
+## Modifiers
 
-<span id="tracer"></span>
-### Tracer
+With the exception of **React - Effector | Color**, each effector has the same four modifiers - Random, Step, Elastic and Sticky.
 
-Create animated lines connecting repeated layers.
+<span id="random-modifier"></span>
+### Random Modifier
 
-**How to Use:**
-1. Create a repeater (any type)
-2. Select some or all repeated layers
-3. Click **Tracer** button
-4. Choose tracer type in dialog
+To add randomness to any effector:
 
-**Tracer Types:**
-- **Line** - Straight lines between layer anchors
-- **Point** - Individual points at each layer position
-- **Transform** - Animated path following layer transforms
+1. Select the Effector null
+2. In Effect Controls panel, expand the property section
+3. Locate "Random" modifier and enable it
+4. Adjust settings:
+   - Amount: Set the maximum random variation
+   - Seed: Change for different random patterns
+   - Evolution: 0-360 degrees for animation
+   - Evolution Steps: Reduce for fewer changes in loop
+5. For perfect loops:
+   - Set Evolution to 360
+   - Adjust Evolution Steps (lower = fewer changes)
 
-**Controls:**
-- Tracer shapes are standard After Effects shape layers
-- Edit stroke width, color, and effects
-- Animate path trim for reveal animations
+<span id="step-modifier"></span>
+### Step Modifier
 
-**Use Cases:**
-- Constellation patterns
-- Network diagrams
-- Motion trails
-- Connect-the-dots effects
+To create progressive changes based on layer order:
 
----
+1. Select the Effector null
+2. In Effect Controls, expand property section
+3. Enable "Step" modifier
+4. Adjust the Step value:
+   - Positive: Increases effect with each layer
+   - Negative: Decreases effect with each layer
+5. Note: First layer (index 0) multiplies by 0, last layer by maximum index
 
-<span id="refresh"></span>
-### Refresh
+<span id="sticky-modifier"></span>
+### Sticky Modifier
 
-Update repeater settings and refresh layer structure.
+To snap values to increments:
 
-**How to Use:**
-1. Adjust repeater controls on repeater null layer
-2. Click **Refresh** button
-3. Repeater updates with new settings
-
-**What Gets Refreshed:**
-- Amount (add/remove clones)
-- Sorting order
-- Layer tree structure
-- Property expressions
-
-**Refresh Types:**
-- **Normal Refresh** - Update selected repeater(s)
-- **Alt+Click Refresh** - Update ALL repeaters in composition
-
-**Use Cases:**
-- Change clone count after creation
-- Reorder layers
-- Fix broken expressions
-- Update after composition changes
+1. Select the Effector null
+2. In Effect Controls, expand property section
+3. Enable "Sticky" modifier
+4. Set the increment value:
+   - For rotation: 90 for right angles
+   - For position: Whole numbers for grid alignment
+   - For scale: Common percentages (like 100)
 
 ---
 
-<span id="delete"></span>
-### Delete
+<span id="tracer-feature"></span>
+## Tracer Feature
 
-Remove React elements and optionally bake animations to keyframes.
+To add a tracer to repeated elements:
 
-**How to Use:**
+1. Select your React Repeater null
+2. Click the Add Tracer button
+3. A new shape layer "React Tracer 1" appears
+4. In Effect Controls for the tracer:
+   - Toggle "Close Path" for closed shapes
+   - Adjust "Trim Paths" for animation
+   - Set stroke color and width in layer properties
 
-**Delete Selected:**
-1. Select repeater layer, effector layer, or affected layers
-2. Click **Delete** button
-3. Choose **Delete Selected** in dialog
-4. Choose baking mode
+For Grid Controls:
 
-**Delete All:**
-1. Click **Delete** button (no selection)
-2. Choose **Delete All** in dialog
-3. Choose baking mode
-
-**Baking Modes:**
-- **No Baking** - Remove expressions, layers revert to original state
-- **Current Frame** - Bake current values as static values
-- **All Frames** - Bake full animation to keyframes
-
-**What Gets Deleted:**
-- Repeater null layers
-- Effector layers
-- React expressions from layers
-- React pseudo effects from layers
-
-**Smart Deletion:**
-- Deleting one effector preserves others on same property
-- Deleting repeater preserves effectors
-- Position expressions preserved when repeater remains
-
-**Use Cases:**
-- Clean up finished animations
-- Bake procedural motion to keyframes
-- Remove React dependencies
-- Reduce project complexity
+1. Select the Tracer layer
+2. In Effect Controls, find "Grid Controls"
+3. Choose pattern type:
+   - Grid: Standard grid pattern
+   - Snake: Continuous line through grid
+   - Zigzag: Alternating direction pattern
+4. Adjust stroke settings in layer properties:
+   - Color
+   - Width
+   - Dash patterns if desired
 
 ---
 
-## Tips & Tricks
+<span id="working-with-text-layers"></span>
+## Working with Text Layers
 
-### Combining Multiple Repeaters
-- Create multiple repeaters on the same layers
-- Each repeater adds to position independently
-- Use different repeater types for complex patterns
+To set up text repeaters:
 
-### Parenting with Repeaters
-- Parent repeated layers to create hierarchies
-- Effectors work correctly with parented layers
-- Great for mechanical rigs and character animation
+1. Create or select a text layer
+2. Click any repeater button (Grid, Linear, or Radial)
+3. In the React Repeater effect controls:
+4. Find "Text Source" dropdown
+5. Choose splitting method:
+   - Letters: Each character becomes separate
+   - Letters excluding spaces: Ignores whitespace
+   - Words: Splits at spaces
+   - Lines: Splits at line breaks
+6. The grid updates automatically while typing
 
-### 3D Space
-- React works with both 2D and 3D layers
-- Position effectors respect 3D space
-- Radial repeaters can work in 3D with rotation
+To add effects to repeated text:
 
-### Expression Performance
-- Expressions are optimized for performance
-- Property lookups cached where possible
-- 500+ test cases ensure reliability
-
-### Keyboard Shortcuts
-- **Shift+Click** any button → Opens help documentation
-- **Alt+Click Refresh** → Refresh all repeaters in comp
-- **Alt+Click Effector** → Create effector without property selection
+1. Must add repeater first
+2. Select text property to affect
+3. Click Add Effector
+4. Adjust effects as normal
 
 ---
 
-## Troubleshooting
+## Utility Functions
 
-### Repeater Not Creating
-**Issue:** Button clicked but nothing happens
-**Solution:**
-- Ensure a composition is open and active
-- Check layer is selected (except Path Repeater)
-- Verify text input has valid number
+<span id="refresh-button"></span>
+### Refresh Button
 
-### Effector Not Working
-**Issue:** Effector created but no effect visible
-**Solution:**
-- Check property is selected before clicking Effector
-- Verify effector amount slider is not at 0
-- Check falloff radius is large enough (if falloff enabled)
-- Try moving effector layer position
+For Repeaters:
 
-### Expressions Show Errors
-**Issue:** Red expression errors in timeline
-**Solution:**
-- Click **Refresh** button to update expressions
-- Check repeater/effector layers haven't been renamed
-- Verify composition expression engine is JavaScript (not Legacy)
+1. Select React Repeater null
+2. Change amounts or arrangement
+3. Click Refresh button
+4. Choose "Refresh Repeater" if prompted
+5. Wait for new layers to generate
 
-### Delete Not Baking
-**Issue:** Delete removes expressions but no keyframes created
-**Solution:**
-- Choose "All Frames" baking mode, not "Current Frame"
-- Ensure property has actual animation (not static)
-- Check layer isn't locked
+For Effectors:
 
-### Performance Issues
-**Issue:** Comp preview is slow with many repeated layers
-**Solution:**
-- Reduce number of clones
-- Disable effectors during preview (checkbox)
-- Lower comp preview resolution
-- Consider baking to keyframes when animation complete
+1. Select existing Effector null
+2. Hold Ctrl/Cmd and select new properties
+3. Click Refresh button
+4. Choose "Refresh Effector" if prompted
+5. New properties are added to effector
 
----
+<span id="delete-button"></span>
+### Delete Button
 
-## Support
+To bake current frame:
 
-**Need Help?**
-- [User Documentation](https://mograph-tools.github.io/react/)
-- [Report Bug](https://github.com/mograph-tools/react/issues)
-- [Feature Request](https://github.com/mograph-tools/react/issues)
+1. Select React Repeater or Effector null
+2. Click Delete button
+3. Choose "Current Frame Only"
+4. Wait for processing
+5. React elements are removed, current state is preserved
 
-**Version:** 2.2.1
-**Developer:** mograph.tools
-**Built with:** Claude Code
+To bake animation:
+
+1. Select React Repeater or Effector null
+2. Click Delete button
+3. Choose "Process Every Frame"
+4. Wait for processing (may take time)
+5. When finished:
+   - React elements removed
+   - Optimized keyframes created
+   - Expressions converted to keyframes
+   - Improved performance
 
 ---
 
-*Copyright © 2025 mograph.tools. All rights reserved.*
+We hope you enjoy using React 2!

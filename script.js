@@ -30,6 +30,13 @@ async function loadMarkdownContent() {
       heading.style.scrollMarginTop = '80px';
     });
 
+    // Make all external links open in new tab
+    const links = contentDiv.querySelectorAll('a[href^="http"]');
+    links.forEach(link => {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+
   } catch (error) {
     contentDiv.innerHTML = `
       <h1>Documentation</h1>
@@ -137,12 +144,12 @@ window.addEventListener('scroll', function() {
 
 function highlightVisibleSection() {
   const sections = [
-    'overview', 'installation',
+    'overview', 'installation', 'toolbar-interface',
+    'repeaters', 'setting-repeater-amounts', 'sorting-modes',
     'linear-repeater', 'grid-repeater', 'radial-repeater', 'path-repeater',
-    'effector-overview', 'position-effector', 'rotation-effector',
-    'scale-effector', 'opacity-effector',
-    'falloff', 'sticky', 'elastic',
-    'tracer', 'refresh', 'delete'
+    'effectors', 'position-effector', 'rotation-effector', 'color-effector',
+    'modifiers', 'random-modifier', 'step-modifier', 'sticky-modifier',
+    'tracer-feature', 'working-with-text-layers', 'refresh-button', 'delete-button'
   ];
 
   let currentSection = null;
