@@ -53,8 +53,39 @@ body {
   font-style: italic;
   font-size: 32px;
   color: var(--purple);
-  margin-bottom: 40px;
+  margin-bottom: 8px;
   letter-spacing: -0.5px;
+}
+
+/* Version switcher */
+.version-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 28px;
+  min-height: 22px;
+}
+
+.version-link {
+  font-family: neuzeit-grotesk, sans-serif;
+  font-size: 12px;
+  color: var(--gray);
+  text-decoration: none;
+  padding: 2px 7px;
+  border-radius: 10px;
+  border: 1px solid var(--light-gray);
+  transition: all 0.15s ease;
+}
+
+.version-link:hover {
+  color: var(--purple);
+  border-color: var(--purple);
+}
+
+.version-link.active {
+  color: var(--white);
+  background: var(--purple);
+  border-color: var(--purple);
 }
 
 .nav-section {
