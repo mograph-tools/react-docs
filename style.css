@@ -137,7 +137,7 @@ body {
 }
 
 #markdown-content {
-  max-width: 800px;
+  max-width: 100%;
 }
 
 /* Typography */
@@ -297,8 +297,8 @@ img {
 #markdown-content p:has(> img:only-child) {
   float: right;
   clear: right;
-  max-width: 280px;
-  margin: 0 0 20px 32px;
+  width: 48%;
+  margin: 0 0 24px 4%;
 }
 
 #markdown-content p:has(> img:only-child) img {

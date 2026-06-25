@@ -59,8 +59,7 @@ Shift-click any button to open the relevant help section.
     <div>
       <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Grid Repeater</h3>
       <p style="margin: 0 0 10px 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a grid. Separate X and Y values with a space, comma, x, *, or -.</p>
-      <div style="margin-bottom:5px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;">3D</span></div>
-      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Add a third value for a 3D grid (e.g. 5x4x3).</p>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;">3D</span>Add a third value for a 3D grid (e.g. 5x4x3).</p>
     </div>
   </div>
 </div>
@@ -80,8 +79,7 @@ Shift-click any button to open the relevant help section.
     <div>
       <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Radial Repeater</h3>
       <p style="margin: 0 0 10px 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a circle. Enter the amount in the text input.</p>
-      <div style="margin-bottom:5px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;">3D</span></div>
-      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">For a 3D radial repeater, enter two numbers: ring count and depth layers (e.g. 12 4).</p>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;">3D</span>For a 3D radial repeater, enter two numbers: ring count and depth layers (e.g. 12 4).</p>
     </div>
   </div>
 </div>
@@ -248,9 +246,7 @@ Arranges layers in a grid.
 - **Honeycomb Offset**: offsets alternating rows on X to create a honeycomb arrangement.
 - **Sorting**: see Sorting above.
 
-<div style="margin-top:20px;margin-bottom:6px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;">3D</span></div>
-
-**3D Grid:** enter a third number in the amount input (e.g. `5x4x3`) to create a three-dimensional grid. The Repeater null becomes a 3D layer automatically. This adds:
+<p style="margin-top:20px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;">3D</span><strong>3D Grid:</strong> enter a third number in the amount input (e.g. <code>5x4x3</code>) to create a three-dimensional grid. The Repeater null becomes a 3D layer automatically. This adds:</p>
 
 - **Z - Amount**: number of depth layers.
 - **Z - Spacing**: distance between depth layers.
@@ -272,9 +268,7 @@ Arranges layers in a circle.
 - **Rotation**: rotates each layer to face outward or at a fixed angle.
 - **Sorting**: see Sorting above.
 
-<div style="margin-top:20px;margin-bottom:6px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;">3D</span></div>
-
-**3D Radial:** enter two numbers in the amount input (e.g. `12 4`) to create a 3D radial repeater. The Repeater null becomes a 3D layer automatically. This adds:
+<p style="margin-top:20px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;">3D</span><strong>3D Radial:</strong> enter two numbers in the amount input (e.g. <code>12 4</code>) to create a 3D radial repeater. The Repeater null becomes a 3D layer automatically. This adds:</p>
 
 - **Depth Amount**: number of Z levels.
 - **Depth Spacing**: distance between Z levels.
@@ -373,9 +367,7 @@ Controls how the effector's influence is distributed spatially.
 - **Size**: radius or extent of the falloff zone. Also controlled by the null's scale.
 - **Hold**: sharpness of the falloff edge. 0% is a gradual transition. 100% is a hard edge.
 
-<div style="margin-top:20px;margin-bottom:6px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;">3D</span></div>
-
-By default the Effector null is a 2D layer. In 2D mode, Circle and Box falloff use XY distance only and affect all layers regardless of Z position. Enable 3D on the null to include the Z axis in falloff calculations.
+<p style="margin-top:20px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;">3D</span>By default the Effector null is a 2D layer. In 2D mode, Circle and Box falloff use XY distance only and affect all layers regardless of Z position. Enable 3D on the null to include the Z axis in falloff calculations.</p>
 
 **Animation**
 
@@ -554,9 +546,7 @@ Used for Grid repeaters. Three path arrangements are available via the mode sele
 - **Zig Zag**: alternating direction without reversing.
 - **Close Path**: closes the path.
 
-<div style="margin-top:20px;margin-bottom:6px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;">3D</span></div>
-
-For Grid repeaters with Z depth, the tracer creates two separate paths:
+<p style="margin-top:20px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;">3D</span>For Grid repeaters with Z depth, the tracer creates two separate paths:</p>
 
 - One XY-face path per Z slice. The Grid/Snake/Zig Zag selector switches between arrangements.
 - One continuous Z pillar path that snakes row-by-row through all Z levels.
@@ -565,9 +555,7 @@ For Grid repeaters with Z depth, the tracer creates two separate paths:
 
 Used for Radial repeaters. Connects layers around the ring as a closed loop.
 
-<div style="margin-top:20px;margin-bottom:6px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;">3D</span></div>
-
-For Radial repeaters with Z depth, the tracer creates two separate paths:
+<p style="margin-top:20px;"><span style="display:inline-block;background:#8471FF;color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:middle;">3D</span>For Radial repeaters with Z depth, the tracer creates two separate paths:</p>
 
 - One closed ring per Z level.
 - One continuous Z pillar path.
