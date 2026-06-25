@@ -132,8 +132,8 @@ body {
 .content {
   margin-left: 280px;
   padding: 64px 80px;
-  max-width: 1200px;
-  width: 100%;
+  width: calc(100vw - 280px);
+  box-sizing: border-box;
 }
 
 #markdown-content {
@@ -370,6 +370,7 @@ hr {
   .content {
     margin-left: 240px;
     padding: 48px 40px;
+    width: calc(100vw - 240px);
   }
 }
 
@@ -389,5 +390,6 @@ hr {
   .content {
     margin-left: 0;
     padding: 32px 24px;
+    width: 100%;
   }
 }
