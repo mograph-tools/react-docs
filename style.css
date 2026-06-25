@@ -284,7 +284,7 @@ tr:hover {
   background: rgba(132, 113, 255, 0.03);
 }
 
-/* Images — float right for two-column layout */
+/* Images */
 img {
   max-width: 100%;
   height: auto;
@@ -294,10 +294,15 @@ img {
   border: 1px solid var(--light-gray);
 }
 
+/* Two-column layout: all text content stays in left 50%, images float right */
+#markdown-content > *:not(p:has(> img:only-child)) {
+  max-width: 50%;
+}
+
 #markdown-content p:has(> img:only-child) {
   float: right;
   clear: right;
-  width: 48%;
+  width: 46%;
   margin: 0 0 24px 4%;
 }
 
