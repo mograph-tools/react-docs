@@ -284,7 +284,7 @@ tr:hover {
   background: rgba(132, 113, 255, 0.03);
 }
 
-/* Images */
+/* Images — float right for two-column layout */
 img {
   max-width: 100%;
   height: auto;
@@ -292,6 +292,25 @@ img {
   margin: 24px 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--light-gray);
+}
+
+#markdown-content p:has(> img:only-child) {
+  float: right;
+  clear: right;
+  max-width: 280px;
+  margin: 0 0 20px 32px;
+}
+
+#markdown-content p:has(> img:only-child) img {
+  margin: 0;
+  width: 100%;
+}
+
+#markdown-content h2,
+#markdown-content h3,
+#markdown-content h4,
+#markdown-content hr {
+  clear: both;
 }
 
 /* Image captions (when using <em> after image) */
