@@ -208,14 +208,23 @@ function highlightVisibleSection() {
     'tracer-feature', 'working-with-text-layers', 'refresh-button', 'delete-button'
   ];
 
+  // Walk sections in document order; keep updating active as long as the
+  // section's top is at or above the threshold. Stop at the first section
+  // that hasn't scrolled into view yet. Works for both block headings and
+  // zero-height <span> anchors.
+  let active = null;
   for (const sectionId of sections) {
     const el = document.getElementById(sectionId);
     if (!el) continue;
-    const rect = el.getBoundingClientRect();
-    if (rect.top <= 100 && rect.bottom >= 100) {
-      const link = document.querySelector(`a[href="#${sectionId}"]`);
-      if (link && !link.classList.contains('active')) updateActiveLink(link);
+    if (el.getBoundingClientRect().top <= 120) {
+      active = sectionId;
+    } else {
       break;
     }
+  }
+
+  if (active) {
+    const link = document.querySelector(`a[href="#${active}"]`);
+    if (link && !link.classList.contains('active')) updateActiveLink(link);
   }
 }

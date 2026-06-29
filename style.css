@@ -132,12 +132,12 @@ body {
 .content {
   margin-left: 280px;
   padding: 64px 80px;
-  max-width: 1200px;
-  width: 100%;
+  width: calc(100vw - 280px);
+  box-sizing: border-box;
 }
 
 #markdown-content {
-  max-width: 800px;
+  max-width: 100%;
 }
 
 /* Typography */
@@ -294,6 +294,30 @@ img {
   border: 1px solid var(--light-gray);
 }
 
+/* Two-column layout: all text content stays in left 50%, images float right */
+#markdown-content > *:not(p:has(> img:only-child)) {
+  max-width: 50%;
+}
+
+#markdown-content p:has(> img:only-child) {
+  float: right;
+  clear: right;
+  width: 46%;
+  margin: 0 0 24px 4%;
+}
+
+#markdown-content p:has(> img:only-child) img {
+  margin: 0;
+  width: 100%;
+}
+
+#markdown-content h2,
+#markdown-content h3,
+#markdown-content h4,
+#markdown-content hr {
+  clear: both;
+}
+
 /* Image captions (when using <em> after image) */
 #markdown-content img + em {
   display: block;
@@ -346,6 +370,7 @@ hr {
   .content {
     margin-left: 240px;
     padding: 48px 40px;
+    width: calc(100vw - 240px);
   }
 }
 
@@ -365,5 +390,6 @@ hr {
   .content {
     margin-left: 0;
     padding: 32px 24px;
+    width: 100%;
   }
 }
