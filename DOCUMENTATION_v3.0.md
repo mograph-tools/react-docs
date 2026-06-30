@@ -28,15 +28,17 @@ Shift-click any button to open the relevant help section.
 <div style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin: 24px 0;">
   <div style="display: flex; align-items: flex-start; gap: 16px;">
     <div style="width: 42px; height: 42px; background: transparent; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-      <svg width="28" height="28" viewBox="0 0 28 28">
-        <circle cx="5" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="14" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
-        <circle cx="23" cy="14" r="3" fill="none" stroke="#00c4ff" stroke-width="1.2"/>
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#00c4ff" stroke-width="1.2">
+        <circle cx="14" cy="14" r="12.73" mask="url(#sphere-ring-mask-doc)"/>
+        <ellipse cx="14" cy="14" rx="12.73" ry="7.38" transform="rotate(-45 14 14)"/>
+        <ellipse cx="14" cy="14" rx="12.73" ry="2.55" transform="rotate(-45 14 14)"/>
+        <circle cx="5" cy="5" r="3"/>
+        <circle cx="23" cy="23" r="3"/>
       </svg>
     </div>
     <div>
-      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Linear Repeater</h3>
-      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a line. Enter the amount in the text input.</p>
+      <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #303030;">Sphere Repeater</h3>
+      <p style="margin: 0; font-size: 14px; color: #4a4a4a; line-height: 1.6;">Select one or more layers, then press to repeat in a 3D sphere arrangement. Enter the amount in the text input.</p>
     </div>
   </div>
 </div>
@@ -217,18 +219,13 @@ Controls where the Repeater null sits relative to the group.
 - **Centre**: the Repeater null sits at the centre of the group.
 - **First Layer**: the Repeater null sits at the position of the first layer.
 
-<span id="linear-repeater"></span>
-### Linear Repeater
+<span id="sphere-repeater"></span>
+### Sphere Repeater
 
-Arranges layers in a line.
+Arranges layers across the surface of a 3D sphere.
 
-![Linear Repeater Controls](images/Linear.png)
-
-- **Amount**: number of layers.
+- **Amount**: number of layers distributed across the sphere.
 - **Spacing**: distance between layers. Scale the null to change this proportionally.
-- **Rotation**: rotates the entire group.
-- **Repeat from**: Centre or First Layer.
-- **Offset**: shifts the entire group along the line.
 - **Sorting**: see Sorting above.
 
 <span id="grid-repeater"></span>
@@ -531,7 +528,7 @@ React creates a layer called "React - Tracer 1". Additional tracers increment th
 
 ### Line tracer
 
-Used for Linear and Path repeaters, and for layer tracers. Connects layers in sequence as a single open path.
+Used for Path repeaters and layer tracers. Connects layers in sequence as a single open path.
 
 In the React - Tracer effect on the tracer layer:
 
