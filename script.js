@@ -125,6 +125,7 @@ async function loadMarkdownContent(version) {
 
     const markdown = await response.text();
     contentDiv.innerHTML = marked.parse(markdown);
+    injectHeadingIcons(contentDiv);
 
     const headings = contentDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
     headings.forEach(heading => {
@@ -197,6 +198,65 @@ window.addEventListener('scroll', function() {
   clearTimeout(scrollTimeout);
   scrollTimeout = setTimeout(highlightVisibleSection, 100);
 });
+
+function injectHeadingIcons(container) {
+  const SVGS = {
+    'grid-repeater': {
+      size: 28,
+      content: '<circle cx="5" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="14" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="23" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="5" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="14" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="23" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="5" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="14" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="23" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>'
+    },
+    'radial-repeater': {
+      size: 28,
+      content: '<circle cx="14" cy="4" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="22.5" cy="9.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="22.5" cy="18.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="14" cy="24" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="5.5" cy="18.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="5.5" cy="9.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>'
+    },
+    'sphere-repeater': {
+      size: 28,
+      content: '<circle cx="14" cy="14" r="12.73" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><ellipse cx="14" cy="14" rx="12.73" ry="7.38" fill="none" stroke="#2ACCFF" stroke-width="1.2" transform="rotate(-45 14 14)"/><ellipse cx="14" cy="14" rx="12.73" ry="2.55" fill="none" stroke="#2ACCFF" stroke-width="1.2" transform="rotate(-45 14 14)"/><circle cx="5" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="23" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>'
+    },
+    'path-repeater': {
+      size: 28,
+      content: '<path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="6" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="22" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>'
+    },
+    'effectors': {
+      size: 36,
+      content: '<circle cx="14" cy="14" r="10.5" fill="none" stroke="#8471FF" stroke-width="1.2"/><line x1="14" y1="8" x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>'
+    },
+    'tracer-feature': {
+      size: 36,
+      content: '<rect x="3.5" y="3.5" width="21" height="21" fill="none" stroke="#8471FF" stroke-width="1.2"/><line x1="3.5" y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/><line x1="3.5" y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/><line x1="10.5" y1="3.5" x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/><line x1="17.5" y1="3.5" x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>'
+    },
+    'refresh-button': {
+      size: 36,
+      content: '<path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>'
+    },
+    'delete-button': {
+      size: 36,
+      content: '<circle cx="14" cy="14" r="11.67" fill="none" stroke="#EC5E5E" stroke-width="1.2"/><line x1="9.33" y1="9.33" x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/><line x1="18.67" y1="9.33" x2="9.33" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>'
+    }
+  };
+
+  Object.entries(SVGS).forEach(function(entry) {
+    var spanId = entry[0];
+    var icon = entry[1];
+    var span = container.querySelector('span[id="' + spanId + '"]');
+    if (!span) return;
+    // marked.js wraps the standalone <span> in a <p> — walk up if needed
+    var anchor = (span.parentElement && span.parentElement.tagName === 'P') ? span.parentElement : span;
+    var heading = anchor.nextElementSibling;
+    if (!heading || !/^H[1-6]$/.test(heading.tagName)) return;
+
+    var ns = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('width', icon.size);
+    svg.setAttribute('height', icon.size);
+    svg.setAttribute('viewBox', '0 0 28 28');
+    svg.style.flexShrink = '0';
+    svg.innerHTML = icon.content;
+
+    heading.classList.add('heading-icon');
+    heading.appendChild(svg);
+  });
+}
 
 function highlightVisibleSection() {
   const sections = [
