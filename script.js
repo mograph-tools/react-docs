@@ -108,7 +108,7 @@ function renderVersionSwitcher(current, versions) {
     switcher.appendChild(a);
   });
 
-  document.title = 'React v' + current + ' — Parametric Cloning for After Effects';
+  document.title = 'React v' + current + ' — Documentation';
 }
 
 // Load DOCUMENTATION_v{version}.md and render as markdown
@@ -261,11 +261,12 @@ function injectHeadingIcons(container) {
 function highlightVisibleSection() {
   const sections = [
     'overview', 'installation', 'toolbar-interface',
-    'repeaters', 'setting-repeater-amounts', 'sorting-modes',
-    'linear-repeater', 'grid-repeater', 'radial-repeater', 'path-repeater',
-    'effectors', 'position-effector', 'rotation-effector', 'scale-effector', 'color-effector',
+    'repeaters', 'controlling-repeaters', 'setting-repeater-amounts', 'sorting-modes',
+    'grid-repeater', 'radial-repeater', 'sphere-repeater', 'path-repeater', 'text-layers',
+    'effectors', 'effector-controls',
+    'position-effector', 'rotation-effector', 'scale-effector', 'color-effector', 'other-effectors',
     'modifiers', 'noise-modifier', 'wave-modifier', 'elastic-modifier', 'snap-to-modifier', 'clamp-modifier',
-    'tracer-feature', 'working-with-text-layers', 'refresh-button', 'delete-button'
+    'tracer-feature', 'refresh-button', 'delete-button'
   ];
 
   // Walk sections in document order; keep updating active as long as the

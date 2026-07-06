@@ -27,6 +27,32 @@ We created React to help After Effects users create complex animations in second
 
 The React panel has a text input and eight buttons.
 
+<div class="toolbar-preview">
+<svg viewBox="0 0 390 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="56" rx="6" fill="#111111" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="10" y="12" width="52" height="32" rx="4" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="36" y="28" font-family="monospace" font-size="13" fill="rgba(255,255,255,0.5)" text-anchor="middle" dominant-baseline="central">5x5x5</text>
+  <line x1="68" y1="8" x2="68" y2="48" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <rect x="74" y="12" width="32" height="32" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="112" y="12" width="32" height="32" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="150" y="12" width="32" height="32" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="188" y="12" width="32" height="32" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <line x1="226" y1="8" x2="226" y2="48" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <rect x="232" y="12" width="32" height="32" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="270" y="12" width="32" height="32" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="308" y="12" width="32" height="32" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="346" y="12" width="32" height="32" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <svg x="79" y="17" width="22" height="22"><use href="#icon-grid"/></svg>
+  <svg x="117" y="17" width="22" height="22"><use href="#icon-radial"/></svg>
+  <svg x="155" y="17" width="22" height="22"><use href="#icon-sphere"/></svg>
+  <svg x="193" y="17" width="22" height="22"><use href="#icon-path"/></svg>
+  <svg x="237" y="17" width="22" height="22"><use href="#icon-effector"/></svg>
+  <svg x="275" y="17" width="22" height="22"><use href="#icon-tracer"/></svg>
+  <svg x="313" y="17" width="22" height="22"><use href="#icon-refresh"/></svg>
+  <svg x="351" y="17" width="22" height="22"><use href="#icon-delete"/></svg>
+</svg>
+</div>
+
 Enter a number in the text input before clicking a repeater button to set the layer count. Leave it blank to use the default from Preferences.
 
 <div class="tip-box">
@@ -39,17 +65,18 @@ Enter a number in the text input before clicking a repeater button to set the la
 
 <div class="icon-card">
   <div class="icon-card-icon">
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <circle cx="5" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="23" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="5" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="23" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="5" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="23" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-    </svg>
+    <svg width="28" height="28"><use href="#icon-input"/></svg>
+  </div>
+  <div>
+    <h3>Amount Input</h3>
+    <p>Enter a number before clicking a repeater button to set the layer count. Leave blank to use the default from Preferences.</p>
+    <p>For Grid, separate X and Y with a space, x, *, or comma (e.g. <code>8 6</code> or <code>8x6</code>). Add a third value for a 3D grid (e.g. <code>5x4x3</code>). For 3D Radial, enter ring count and depth (e.g. <code>12 4</code>).</p>
+  </div>
+</div>
+
+<div class="icon-card">
+  <div class="icon-card-icon">
+    <svg width="28" height="28"><use href="#icon-grid"/></svg>
   </div>
   <div>
     <h3>Grid Repeater</h3>
@@ -60,31 +87,18 @@ Enter a number in the text input before clicking a repeater button to set the la
 
 <div class="icon-card">
   <div class="icon-card-icon">
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <circle cx="14" cy="4" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="22.5" cy="9.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="22.5" cy="18.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="14" cy="24" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="5.5" cy="18.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="5.5" cy="9.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-    </svg>
+    <svg width="28" height="28"><use href="#icon-radial"/></svg>
   </div>
   <div>
     <h3>Radial Repeater</h3>
     <p>Select one or more layers, then press to repeat in a circle. Enter the amount in the text input.</p>
-    <p><span class="badge-3d">3D</span>For a 3D radial repeater, enter two numbers: ring count and depth layers (e.g. 12 4).</p>
+    <p><span class="badge-3d">3D</span>For a 3D radial repeater, enter two numbers: radial amount and depth amount (e.g. 12 4).</p>
   </div>
 </div>
 
 <div class="icon-card">
   <div class="icon-card-icon">
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#2ACCFF" stroke-width="1.2">
-      <circle cx="14" cy="14" r="12.73"/>
-      <ellipse cx="14" cy="14" rx="12.73" ry="7.38" transform="rotate(-45 14 14)"/>
-      <ellipse cx="14" cy="14" rx="12.73" ry="2.55" transform="rotate(-45 14 14)"/>
-      <circle cx="5" cy="5" r="3"/>
-      <circle cx="23" cy="23" r="3"/>
-    </svg>
+    <svg width="28" height="28"><use href="#icon-sphere"/></svg>
   </div>
   <div>
     <h3>Sphere Repeater</h3>
@@ -94,11 +108,7 @@ Enter a number in the text input before clicking a repeater button to set the la
 
 <div class="icon-card">
   <div class="icon-card-icon">
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="6" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-      <circle cx="22" cy="5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
-    </svg>
+    <svg width="28" height="28"><use href="#icon-path"/></svg>
   </div>
   <div>
     <h3>Path Repeater</h3>
@@ -108,11 +118,7 @@ Enter a number in the text input before clicking a repeater button to set the la
 
 <div class="icon-card">
   <div class="icon-card-icon">
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <circle cx="14" cy="14" r="10.5" fill="none" stroke="#8471FF" stroke-width="1.2"/>
-      <line x1="14" y1="8" x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="8" y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
-    </svg>
+    <svg width="28" height="28"><use href="#icon-effector"/></svg>
   </div>
   <div>
     <h3>Add Effector</h3>
@@ -122,13 +128,7 @@ Enter a number in the text input before clicking a repeater button to set the la
 
 <div class="icon-card">
   <div class="icon-card-icon">
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <rect x="3.5" y="3.5" width="21" height="21" fill="none" stroke="#8471FF" stroke-width="1.2"/>
-      <line x1="3.5" y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/>
-      <line x1="3.5" y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/>
-      <line x1="10.5" y1="3.5" x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
-      <line x1="17.5" y1="3.5" x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
-    </svg>
+    <svg width="28" height="28"><use href="#icon-tracer"/></svg>
   </div>
   <div>
     <h3>Add Tracer</h3>
@@ -138,9 +138,7 @@ Enter a number in the text input before clicking a repeater button to set the la
 
 <div class="icon-card">
   <div class="icon-card-icon">
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <svg width="28" height="28"><use href="#icon-refresh"/></svg>
   </div>
   <div>
     <h3>Refresh</h3>
@@ -150,11 +148,7 @@ Enter a number in the text input before clicking a repeater button to set the la
 
 <div class="icon-card">
   <div class="icon-card-icon">
-    <svg width="28" height="28" viewBox="0 0 28 28">
-      <circle cx="14" cy="14" r="11.67" fill="none" stroke="#EC5E5E" stroke-width="1.2"/>
-      <line x1="9.33" y1="9.33" x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="18.67" y1="9.33" x2="9.33" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
-    </svg>
+    <svg width="28" height="28"><use href="#icon-delete"/></svg>
   </div>
   <div>
     <h3>Delete</h3>
@@ -162,7 +156,7 @@ Enter a number in the text input before clicking a repeater button to set the la
   </div>
 </div>
 
----
+
 
 <span id="repeaters"></span>
 ## Repeaters
@@ -173,7 +167,7 @@ Click any repeater button to create a repeater.
 
 With layers selected, React repeats them. With nothing selected, React creates null cloner layers.
 
-Selecting a single text layer activates Text Layer Repeater mode. See [Text Layers](##text-layers).
+Selecting a single text layer activates Text Layer Repeater mode. See [Text Layers](#text-layers).
 
 When native 3D layers are selected (imported .obj or .gltf models, or AE 2026+ parametric mesh shapes), React pre-composites each one before duplication. We do this as After Effects does not allow effects to be added to these layers.
 
@@ -188,6 +182,8 @@ Along with the spacing controls in the effects panel, you can also scale the nul
 
 To rotate the repeater, press W and rotate the null in the viewer. Or twirl down to find the rotation settings on the repeater null.
 
+<p class="note-3d"><span class="badge-3d">3D</span>A repeater null has 3D enabled by default when a 3D grid, sphere or radial repeater is created. To use a 2D repeater setup in 3D space, all repeater layers must have 3D enabled.</p>
+
 <div class="tip-box">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ACCFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6M12 3C8.686 3 6 5.686 6 9c0 2.12 1.046 3.99 2.644 5.144C9.48 14.815 9.978 15.866 10 17h4c.022-1.134.52-2.185 1.356-2.856C16.954 12.99 18 11.12 18 9c0-3.314-2.686-6-6-6z"/></svg>
   <div>
@@ -196,10 +192,8 @@ To rotate the repeater, press W and rotate the null in the viewer. Or twirl down
   </div>
 </div>
 
-<p class="note-3d"><span class="badge-3d">3D</span>A repeater null has 3D enabled by default when a 3D grid, sphere or radial repeater is created. To use a 2D repeater setup in 3D space, all repeater layers must have 3D enabled.</p>
-
 <span id="setting-repeater-amounts"></span>
-### Amounts
+### Setting Amounts
 
 Enter a number in the text input before clicking.
 
@@ -221,12 +215,14 @@ Separate numbers with a space, comma, x, *, or -.
 
 Enter one number to create a ring with that amount.
 
-<p class="note-3d"><span class="badge-3d">3D</span>Enter two numbers for ring count and depth layers (creates a 3D radial repeater).</p>
+<p class="note-3d"><span class="badge-3d">3D</span>Enter two numbers for radial amount and depth amount (creates a 3D radial repeater).</p>
 
 Invalid characters in the input are ignored. Only numeric values are extracted.
 
 <span id="sorting-modes"></span>
-### Sorting
+### Sorting Modes
+
+![Sorting Controls](images/Sorting.png)
 
 Change the Sorting dropdown in the repeater effect, then press Refresh.
 
@@ -239,12 +235,14 @@ Change the Sorting dropdown in the repeater effect, then press Refresh.
 
 <div id="grid-repeater" class="section-heading">
 <h3>Grid Repeater</h3>
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="14" cy="5" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="23" cy="5" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="5" cy="14" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="14" cy="14" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="23" cy="14" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="5" cy="23" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="14" cy="23" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="23" cy="23" r="3" stroke="#2ACCFF" stroke-width="1.2"/></svg>
+<svg width="28" height="28"><use href="#icon-grid"/></svg>
 </div>
 
 ![Grid Repeater Controls](images/Grid.png)
 
 Arranges layers in a grid.
+
+Click the Grid Repeater null to reveal the following options - 
 
 - **X/Y/Z Amount**: number of layers per axis.
 - **X/Y/Z Spacing**: distance between layers per axis.
@@ -254,12 +252,14 @@ Arranges layers in a grid.
 
 <div id="radial-repeater" class="section-heading">
 <h3>Radial Repeater</h3>
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="4" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="22.5" cy="9.5" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="22.5" cy="18.5" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="14" cy="24" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="5.5" cy="18.5" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="5.5" cy="9.5" r="3" stroke="#2ACCFF" stroke-width="1.2"/></svg>
+<svg width="28" height="28"><use href="#icon-radial"/></svg>
 </div>
 
 ![Radial Repeater Controls](images/Radial.png)
 
 Arranges layers in a circle.
+
+Click the Radial Repeater null to reveal the following options - 
 
 - **Radial Amount**: number of layers in the ring.
 - **Depth Amount**: number of rings in Z space.
@@ -273,12 +273,14 @@ Arranges layers in a circle.
 
 <div id="sphere-repeater" class="section-heading">
 <h3>Sphere Repeater</h3>
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="12" stroke="#2ACCFF" stroke-width="1.2"/><ellipse cx="14" cy="14" rx="12" ry="6" stroke="#2ACCFF" stroke-width="1.2"/><ellipse cx="14" cy="14" rx="12" ry="2" stroke="#2ACCFF" stroke-width="1.2" transform="rotate(-45 14 14)"/></svg>
+<svg width="28" height="28"><use href="#icon-sphere"/></svg>
 </div>
 
-![Radial Repeater Controls](images/Sphere.png)
+![Sphere Repeater Controls](images/Sphere.png)
 
 Arranges layers across the surface of a 3D sphere.
+
+Click the Sphere Repeater null to reveal the following options - 
 
 - **Amount**: number of layers distributed across the sphere.
 - **Radius**: sphere radius. Scale the repeater null to change this per axis.
@@ -286,7 +288,7 @@ Arranges layers across the surface of a 3D sphere.
 
 <div id="path-repeater" class="section-heading">
 <h3>Path Repeater</h3>
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="23" r="3" stroke="#2ACCFF" stroke-width="1.2"/><circle cx="22" cy="5" r="3" stroke="#2ACCFF" stroke-width="1.2"/></svg>
+<svg width="28" height="28"><use href="#icon-path"/></svg>
 </div>
 
 ![Path Repeater Dialog](images/PathDialog.png)
@@ -301,6 +303,8 @@ Click the Path Repeater button. A dialog appears with the following options -
 
 - **Orient along path:** when checked, each repeated layer rotates to follow the path direction.
 
+Click Continue and React will create the Path Repeater null and repeat layers along the path.
+
 <div class="alert-box">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
   <div>
@@ -311,6 +315,8 @@ Click the Path Repeater button. A dialog appears with the following options -
 
 ![Path Repeater Controls](images/Path.png)
 
+Click the Path Repeater null to reveal the following options - 
+
 - **Amount**: number of layers distributed along the path.
 - **Start / End**: position of the first and last layer as a percentage along the path. 0 = path start, 100 = path end.
 - **Loop**: when enabled, layers loop along the path.
@@ -319,10 +325,10 @@ Click the Path Repeater button. A dialog appears with the following options -
 
 New paths have a white stroke set to width 0 by default. Increase the stroke width to see it.
 
----
+
 
 <span id="text-layers"></span>
-## Text Layers
+### Text Layers
 
 ![Text Source Controls](images/Text.png)
 
@@ -330,7 +336,7 @@ Select a single text layer before clicking any repeater button to activate Text 
 
 React creates a guide layer called "React - Text Source" and applies the React - Text effect to it. Each cloned layer displays a different portion of the source text. Edit the guide layer text and all repeated layers update live.
 
-Select the guide layer to see the React - Text effect controls in the Effects panel.
+Click the text guide layer null to reveal the following options - 
 
 **Repeater based on**: how to split the source text.
 
@@ -341,11 +347,11 @@ Select the guide layer to see the React - Text effect controls in the Effects pa
 
 **Adjust Anchor Point**: shifts the anchor point of each text layer. Useful when the anchor is not centred on the character.
 
----
+
 
 <div id="effectors" class="section-heading section-heading-h2">
 <h2>Effectors</h2>
-<svg width="36" height="36" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="10.5" stroke="#8471FF" stroke-width="1.2"/><line x1="14" y1="8" x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/></svg>
+<svg width="36" height="36"><use href="#icon-effector"/></svg>
 </div>
 
 Effectors change property values across many layers at once, making complex animations simple.
@@ -368,7 +374,7 @@ If the property belongs to a layer inside a repeater, the effector is applied to
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ACCFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6M12 3C8.686 3 6 5.686 6 9c0 2.12 1.046 3.99 2.644 5.144C9.48 14.815 9.978 15.866 10 17h4c.022-1.134.52-2.185 1.356-2.856C16.954 12.99 18 11.12 18 9c0-3.314-2.686-6-6-6z"/></svg>
   <div>
     <span class="tip-box-label">Tip</span>
-    <p class="tip-box-text">Hold **Alt** to apply the effector to the selected layer only, regardless of the repeater.</p>
+    <p class="tip-box-text">Hold Alt to apply the effector to the selected layer only, regardless of the repeater.</p>
   </div>
 </div>
 
@@ -380,7 +386,8 @@ React creates two layers: an Effector null and a guide layer. The guide visualis
 
 You can apply multiple effectors to the same property — just repeat the process.
 
-### Effector controls
+<span id="effector-controls"></span>
+### Effector Controls
 
 Select the Effector null to see its controls in the Effects panel.
 
@@ -388,7 +395,7 @@ There are two effects: **React - Effector** (global controls) and one effect per
 
 #### React - Effector
 
-![Text Source Controls](images/Effector.png)
+![Effector Controls](images/Effector.png)
 
 **Amount**
 
@@ -408,7 +415,7 @@ Controls how the effector's influence is distributed spatially.
 
 **Animation**
 
-![Text Source Controls](images/CustomEasing.png)
+![Custom Easing](images/CustomEasing.png)
 
 Controls how the effector value distributes across layers.
 
@@ -525,10 +532,10 @@ Assigns colors from a palette of up to 10 colors. Enable each color with its che
     - **Blend**: colors blended smoothly across layers. **Blend - Loop Length** sets how many layers span one full blend cycle.
     - **Random**: colors distributed randomly. Use **Seed**, **Evolution**, and **Evolution Step** to control the pattern.
 
+<span id="other-effectors"></span>
+#### Other Effectors
 
-#### Generic Effectors
-
-![Scale Effector Controls](images/Opacity.png)
+![Opacity Effector Controls](images/Opacity.png)
 
 For properties that are not Position, Rotation, Scale, or Color, React applies a generic effector based on the number of dimensions.
 
@@ -538,7 +545,7 @@ For properties that are not Position, Rotation, Scale, or Color, React applies a
 
 Each generic effector has the same Relative/Absolute mode and all five modifiers. Controls are labelled per axis (X, Y, Z) as applicable.
 
----
+
 
 <span id="modifiers"></span>
 ## Modifiers
@@ -548,7 +555,7 @@ Every effector except Color has five modifiers: Noise, Wave, Elastic, Snap To, a
 <span id="noise-modifier"></span>
 ### Noise
 
-![Scale Effector Controls](images/Noise.png)
+![Noise Modifier](images/Noise.png)
 
 Adds noise and randomness to a property.
 
@@ -588,7 +595,7 @@ Number of frames for a seamless loop. Set to 0 to disable looping.
 <span id="wave-modifier"></span>
 ### Wave
 
-![Scale Effector Controls](images/Wave.png)
+![Wave Modifier](images/Wave.png)
 
 Adds a repeating wave pattern across layers.
 
@@ -624,7 +631,7 @@ How fast the wave pattern moves over time. Set to 0 to disable animation.
 <span id="elastic-modifier"></span>
 ### Elastic
 
-![Scale Effector Controls](images/Elastic.png)
+![Elastic Modifier](images/Elastic.png)
 
 Adds a spring bounce when the effector value changes.
 
@@ -655,7 +662,7 @@ How quickly the bounce settles, in frames. Lower values settle faster.
 <span id="snap-to-modifier"></span>
 ### Snap To
 
-![Scale Effector Controls](images/SnapTo.png)
+![Snap To Modifier](images/SnapTo.png)
 
 Snaps the output value to the nearest multiple of an increment.
 
@@ -668,7 +675,7 @@ The snap increment (per axis). Set to 0 to disable.
 <span id="clamp-modifier"></span>
 ### Clamp
 
-![Scale Effector Controls](images/Clamp.png)
+![Clamp Modifier](images/Clamp.png)
 
 Limits the output to a minimum or maximum value. Applied last, after all other modifiers.
 
@@ -680,11 +687,10 @@ For X/Y/Z, enable with the checkbox, then set the minimum value.
 
 For X/Y/Z, enable with the checkbox, then set the maximum value.
 
----
 
 <div id="tracer-feature" class="section-heading section-heading-h2">
 <h2>Tracer</h2>
-<svg width="36" height="36" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3.5" y="3.5" width="21" height="21" stroke="#8471FF" stroke-width="1.2"/><line x1="3.5" y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/><line x1="3.5" y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/><line x1="10.5" y1="3.5" x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/><line x1="17.5" y1="3.5" x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/></svg>
+<svg width="36" height="36"><use href="#icon-tracer"/></svg>
 </div>
 
 The Tracer creates a shape layer that draws lines between repeated layers. The path expression updates live as layer positions change. Set stroke color, width, and dash settings directly in the shape layer properties.
@@ -711,7 +717,7 @@ React creates a shape layer called "React - Tracer 1". Additional tracers increm
 
 ### Tracer Settings
 
-![Scale Effector Controls](images/Tracer.png)
+![Tracer Controls](images/Tracer.png)
 
 In the React - Tracer effect on the tracer shape layer:
 
@@ -733,11 +739,11 @@ Used for Grid repeaters only.
 - **Snake**: row-by-row path, alternating direction each row.
 - **Zig Zag**: alternating direction without reversing.
 
----
+
 
 <div id="refresh-button" class="section-heading section-heading-h2">
 <h2>Refresh</h2>
-<svg width="36" height="36" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg width="36" height="36"><use href="#icon-refresh"/></svg>
 </div>
 
 This button has two jobs - Repeater Refresh and Effector Refresh. 
@@ -757,11 +763,11 @@ Select an Effector null, and one or more properties from another layer, then cli
 - React adds the selected properties to the existing effector.
 - If the property belongs to a layer inside a repeater, the effector is applied to every layer in that repeater.
 
----
+
 
 <div id="delete-button" class="section-heading section-heading-h2">
 <h2>Delete</h2>
-<svg width="36" height="36" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="11.67" stroke="#EC5E5E" stroke-width="1.2"/><line x1="9.33" y1="9.33" x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/><line x1="18.67" y1="9.33" x2="9.33" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/></svg>
+<svg width="36" height="36"><use href="#icon-delete"/></svg>
 </div>
 
 Select one or more Repeater or Effector nulls, then click Delete.

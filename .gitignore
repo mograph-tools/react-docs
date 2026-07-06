@@ -1,3 +1,7 @@
 .DS_Store
 FEATURES.md
 TONE_OF_VOICE.md
+
+# AE project files and working screenshot folders
+*.aep
+images/++ screenshots/

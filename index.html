@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>React - Parametric Cloning for After Effects</title>
-  <link rel="stylesheet" href="style.css">
+  <title>React — Documentation</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css?v=3.3">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <nav class="sidebar">
-    <div class="logo">React</div>
+    <div class="logo">REACT<span class="logo-3d">3D</span></div>
     <div class="version-bar">
       <span id="version-switcher"></span>
     </div>
@@ -21,7 +22,7 @@
     </div>
     <div class="nav-section">
       <h3>Repeaters</h3>
-      <a href="#repeaters" class="nav-link">Overview</a>
+      <a href="#repeaters" class="nav-link">Setup</a>
       <a href="#controlling-repeaters" class="nav-link">Controlling Repeaters</a>
       <a href="#setting-repeater-amounts" class="nav-link">Setting Amounts</a>
       <a href="#sorting-modes" class="nav-link">Sorting Modes</a>
@@ -33,11 +34,13 @@
     </div>
     <div class="nav-section">
       <h3>Effectors</h3>
-      <a href="#effectors" class="nav-link">Overview</a>
+      <a href="#effectors" class="nav-link">Adding an Effector</a>
+      <a href="#effector-controls" class="nav-link">Effector Controls</a>
       <a href="#position-effector" class="nav-link">Position</a>
       <a href="#rotation-effector" class="nav-link">Rotation</a>
       <a href="#scale-effector" class="nav-link">Scale</a>
       <a href="#color-effector" class="nav-link">Color</a>
+      <a href="#other-effectors" class="nav-link">Other Effectors</a>
     </div>
     <div class="nav-section">
       <h3>Modifiers</h3>
@@ -63,5 +66,84 @@
   </main>
 
   <script src="script.js"></script>
+
+  <!-- SVG Sprite Sheet — single source of truth for all icons.
+       Use anywhere with: <svg width="28" height="28"><use href="#icon-grid"/></svg>
+       Sphere mask circles use fill="currentColor"; set CSS `color` on the
+       container to match its background so the main circle is hidden behind dots. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <defs>
+
+      <symbol id="icon-input" viewBox="0 0 28 28">
+        <rect x="2" y="6" width="24" height="16" rx="3" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        <text x="14" y="14" font-family="monospace" font-size="12" fill="rgba(255,255,255,0.5)" text-anchor="middle" dominant-baseline="central">6</text>
+      </symbol>
+
+      <symbol id="icon-grid" viewBox="0 0 28 28">
+        <circle cx="5"  cy="5"  r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="14" cy="5"  r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="23" cy="5"  r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="5"  cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="14" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="23" cy="14" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="5"  cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="14" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="23" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+      </symbol>
+
+      <symbol id="icon-radial" viewBox="0 0 28 28">
+        <circle cx="14"   cy="4"    r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="22.5" cy="9.5"  r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="22.5" cy="18.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="14"   cy="24"   r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="5.5"  cy="18.5" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="5.5"  cy="9.5"  r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+      </symbol>
+
+      <!-- Sphere: mask circles use fill="currentColor" — set CSS `color` on
+           the container to its background color so the sphere circle is hidden. -->
+      <symbol id="icon-sphere" viewBox="0 0 28 28">
+        <circle cx="14" cy="14" r="12.73" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <ellipse cx="14" cy="14" rx="12.73" ry="7.38" transform="rotate(-45 14 14)" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <ellipse cx="14" cy="14" rx="12.73" ry="2.55" transform="rotate(-45 14 14)" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="5"  cy="5"  r="3.8" fill="currentColor" stroke="none"/>
+        <circle cx="23" cy="23" r="3.8" fill="currentColor" stroke="none"/>
+        <circle cx="5"  cy="5"  r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="23" cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+      </symbol>
+
+      <symbol id="icon-path" viewBox="0 0 28 28">
+        <path d="M 6 20 C 6 10, 13 11, 14 14 C 15 17, 22 18, 22 8" fill="none" stroke="#2ACCFF" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="6"  cy="23" r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+        <circle cx="22" cy="5"  r="3" fill="none" stroke="#2ACCFF" stroke-width="1.2"/>
+      </symbol>
+
+      <symbol id="icon-effector" viewBox="0 0 28 28">
+        <circle cx="14" cy="14" r="10.5" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="14" y1="8"  x2="14" y2="20" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="8"  y1="14" x2="20" y2="14" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round"/>
+      </symbol>
+
+      <symbol id="icon-tracer" viewBox="0 0 28 28">
+        <rect x="3.5" y="3.5" width="21" height="21" fill="none" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="3.5"  y1="10.5" x2="24.5" y2="10.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="3.5"  y1="17.5" x2="24.5" y2="17.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="10.5" y1="3.5"  x2="10.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+        <line x1="17.5" y1="3.5"  x2="17.5" y2="24.5" stroke="#8471FF" stroke-width="1.2"/>
+      </symbol>
+
+      <symbol id="icon-refresh" viewBox="0 0 28 28">
+        <path d="M25.6 11C24.8 7.1 20.6 2 14 2S2 7.4 2 14 7.4 26 14 26s9.8-4.8 10.6-6.4M26.3 3 26.3 11 18.3 11" fill="none" stroke="#8471FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+
+      <symbol id="icon-delete" viewBox="0 0 28 28">
+        <circle cx="14" cy="14" r="11.67" fill="none" stroke="#EC5E5E" stroke-width="1.2"/>
+        <line x1="9.33"  y1="9.33"  x2="18.67" y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="18.67" y1="9.33"  x2="9.33"  y2="18.67" stroke="#EC5E5E" stroke-width="1.2" stroke-linecap="round"/>
+      </symbol>
+
+    </defs>
+  </svg>
+
 </body>
 </html>
