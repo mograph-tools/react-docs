@@ -188,7 +188,7 @@ To rotate the repeater, press W and rotate the null in the viewer. Or twirl down
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ACCFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6M12 3C8.686 3 6 5.686 6 9c0 2.12 1.046 3.99 2.644 5.144C9.48 14.815 9.978 15.866 10 17h4c.022-1.134.52-2.185 1.356-2.856C16.954 12.99 18 11.12 18 9c0-3.314-2.686-6-6-6z"/></svg>
   <div>
     <span class="tip-box-label">Tip</span>
-    <p class="tip-box-text">To lock repeated layers to the Repeater null's rotation, parent them to the Repeater null. The layers follow the null's rotation while keeping their repeater positions.</p>
+    <p class="tip-box-text">To lock a repeated layer's rotation to the Repeater null's rotation, parent the layer to the Repeater null. The layers follow the null's rotation while keeping their repeater positions.</p>
   </div>
 </div>
 
@@ -285,6 +285,14 @@ Click the Sphere Repeater null to reveal the following options -
 - **Amount**: number of layers distributed across the sphere.
 - **Radius**: sphere radius. Scale the repeater null to change this per axis.
 - **Sorting**: see Sorting above.
+
+<div class="tip-box">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ACCFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6M12 3C8.686 3 6 5.686 6 9c0 2.12 1.046 3.99 2.644 5.144C9.48 14.815 9.978 15.866 10 17h4c.022-1.134.52-2.185 1.356-2.856C16.954 12.99 18 11.12 18 9c0-3.314-2.686-6-6-6z"/></svg>
+  <div>
+    <span class="tip-box-label">Tip</span>
+    <p class="tip-box-text">To get layers to face outward, add a Rotation effector. Adding a rotation effector to a sphere repeater automatically sets the mode to Look At and the target to the sphere repeater null.</p>
+  </div>
+</div>
 
 <div id="path-repeater" class="section-heading">
 <h3>Path Repeater</h3>
