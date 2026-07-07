@@ -201,7 +201,7 @@ Leave it blank to use the default values from the Preferences window.
 
 To update the layer count after creation, change the Amount in the Effects panel, then press Refresh.
 
-**Grid:**
+#### Grid
 
 Enter one number to use the same value for X and Y. For example, '3' in the text box would create a 3x3 grid.
 
@@ -211,7 +211,7 @@ Enter two numbers for X and Y. For example, '8 10' in the text box would create 
 
 Separate numbers with a space, comma, x, *, or -.
 
-**Radial:**
+#### Radial
 
 Enter one number to create a ring with that amount.
 
@@ -223,6 +223,12 @@ Invalid characters in the input are ignored. Only numeric values are extracted.
 ### Sorting Modes
 
 ![Sorting Controls](images/Sorting.png)
+
+Always keep the repeater layers directly below the repeater null. Adding non-React layers between repeater layers will result in the index shifting in the repeater.
+
+You can change the order or sorting of the layers by placing them in a different order in the composition panel.
+
+Alternatively, use a different Sorting mode.
 
 Change the Sorting dropdown in the repeater effect, then press Refresh.
 
@@ -290,7 +296,7 @@ Click the Sphere Repeater null to reveal the following options -
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ACCFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6M12 3C8.686 3 6 5.686 6 9c0 2.12 1.046 3.99 2.644 5.144C9.48 14.815 9.978 15.866 10 17h4c.022-1.134.52-2.185 1.356-2.856C16.954 12.99 18 11.12 18 9c0-3.314-2.686-6-6-6z"/></svg>
   <div>
     <span class="tip-box-label">Tip</span>
-    <p class="tip-box-text">To get layers to face outward, add a Rotation effector. Adding a rotation effector to a sphere repeater automatically sets the mode to Look At and the target to the sphere repeater null.</p>
+    <p class="tip-box-text">To get layers to face outward, add an effector to any layer's rotation property. Adding a rotation effector to a sphere repeater automatically sets the mode to Look At and the target to the sphere repeater null, facing the layers outward.</p>
   </div>
 </div>
 
