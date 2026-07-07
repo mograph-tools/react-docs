@@ -35,9 +35,12 @@ git push
 # Deploy docs-site/ subtree to mograph-tools/react-docs
 echo ""
 echo -e "${BLUE}Deploying docs to mograph-tools/react-docs...${NC}"
-git subtree push --prefix docs-site "$DOCS_REMOTE" main
+git subtree split --prefix docs-site --branch temp-docs-deploy
+git push --force "$DOCS_REMOTE" temp-docs-deploy:main
+PUSH_RESULT=$?
+git branch -D temp-docs-deploy
 
-if [ $? -eq 0 ]; then
+if [ $PUSH_RESULT -eq 0 ]; then
   echo ""
   echo -e "${GREEN}✅ Documentation updated successfully!${NC}"
   echo ""
