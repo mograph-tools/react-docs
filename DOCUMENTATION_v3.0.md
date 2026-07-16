@@ -19,7 +19,7 @@ We created React to help After Effects users create complex animations in second
 1. Download React from your aescripts account.
 2. Install the ZXP file using the aescripts + aeplugins app.
 3. Restart After Effects.
-4. Open the panel: Window > Extensions > React 3D.
+4. Open the panel: Window > Extensions > React 3.
 
 
 <span id="toolbar-interface"></span>
