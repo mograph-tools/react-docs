@@ -27,7 +27,7 @@
 body {
   font-family: 'polymath-text', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 1.7;
   color: var(--text);
   background: var(--bg);
@@ -199,7 +199,7 @@ h4 {
   margin-top: 32px;
   margin-bottom: 10px;
   letter-spacing: 1.5px;
-  text-transform: none;
+  text-transform: uppercase;
   scroll-margin-top: 80px;
 }
 
@@ -212,7 +212,7 @@ h5, h6 {
   margin-top: 24px;
   margin-bottom: 8px;
   letter-spacing: 1.5px;
-  text-transform: none;
+  text-transform: uppercase;
   scroll-margin-top: 80px;
 }
 
