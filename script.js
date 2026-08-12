@@ -117,7 +117,10 @@ async function loadMarkdownContent(version) {
   const fileName = 'DOCUMENTATION_v' + version + '.md';
 
   try {
-    const response = await fetch(fileName);
+    // no-store: the doc file has no cache-busting query param (unlike style.css?v=),
+    // so without this the browser can keep serving a stale pre-edit copy of the
+    // markdown after a hard reload of index.html itself.
+    const response = await fetch(fileName, { cache: 'no-store' });
 
     if (!response.ok) {
       throw new Error('Documentation file not found: ' + fileName);
