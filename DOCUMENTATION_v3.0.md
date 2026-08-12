@@ -341,6 +341,58 @@ New paths have a white stroke set to width 0 by default. Increase the stroke wid
 
 
 
+<span id="influence-inheritance"></span>
+### Influence + Inheritance
+
+Blend a repeater between its original layout and its computed arrangement, and stack more than one repeater onto the same layers.
+
+**Influence**
+
+Every Repeater null has an **Influence** slider (React - Repeater Influence), 100% by default.
+
+At 100%, layers sit at the repeater's computed position. At 0%, layers sit at their original position, before any repeater was applied. Values in between blend linearly.
+
+With multiple source layers selected, each clone collapses back to its own source layer's original position at 0%.
+
+**Inheritance Chains**
+
+Select an existing Repeater null, then press any repeater button. React asks you to confirm, then adds a new, independent Repeater null on top of the same layers. No new layers are created.
+
+The new Repeater null is always placed above every other null in that chain, regardless of which one was selected when it was added.
+
+Each level blends from whatever came before it toward its own computed position, using its own Influence. At 100% Influence, the most recently added level overrides every level below it.
+
+<div class="alert-box">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+  <div>
+    <span class="alert-box-label">Alert</span>
+    <p class="alert-box-text">Setting the original repeater's Influence to 0% currently overrides every level added on top of it, regardless of their own Influence. Keep the original repeater's Influence above 0% for inherited levels to have an effect.</p>
+  </div>
+</div>
+
+**Index Delay**
+
+Every Repeater null also has an **Index Delay** slider (React - Repeater Index Delay), in frames, 0 by default.
+
+At 0, every layer responds to that level's Influence at the same time. Any other value staggers the response across the repeater, based on each layer's position in the sequence: the first layer responds immediately, the last layer responds after the full delay, and layers in between are spread proportionally across it.
+
+For example, an Index Delay of 30 means the last layer in the repeater responds 30 frames after the first.
+
+**Elastic**
+
+Every Repeater null has its own Elastic controls, disabled by default. Adds a spring bounce when that level's Influence stops changing.
+
+- **React - Repeater Elastic Enable**: turns elastic on or off for this level.
+- **React - Repeater Elastic Amplitude**: multiplier for bounce strength.
+- **React - Repeater Elastic Frequency**: oscillation speed.
+- **React - Repeater Elastic Decay**: how quickly the bounce settles.
+
+If Index Delay is active on that level, the bounce is staggered along with the Influence, so each layer bounces at its own delayed moment instead of all at once.
+
+Elastic is independent per level. Enable it on the original repeater, an inherited level, or both.
+
+
+
 <span id="text-layers"></span>
 ### Text Layers
 

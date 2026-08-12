@@ -262,7 +262,7 @@ function highlightVisibleSection() {
   const sections = [
     'overview', 'installation', 'toolbar-interface',
     'repeaters', 'controlling-repeaters', 'setting-repeater-amounts', 'sorting-modes',
-    'grid-repeater', 'radial-repeater', 'sphere-repeater', 'path-repeater', 'text-layers',
+    'grid-repeater', 'radial-repeater', 'sphere-repeater', 'path-repeater', 'influence-inheritance', 'text-layers',
     'effectors', 'effector-controls',
     'position-effector', 'rotation-effector', 'scale-effector', 'color-effector', 'other-effectors',
     'modifiers', 'noise-modifier', 'wave-modifier', 'elastic-modifier', 'snap-to-modifier', 'clamp-modifier',
