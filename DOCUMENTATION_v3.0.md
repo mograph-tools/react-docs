@@ -352,23 +352,13 @@ Every Repeater null has an **Influence** slider (React - Repeater Influence), 10
 
 At 100%, layers sit at the repeater's computed position. At 0%, layers sit at their original position, before any repeater was applied. Values in between blend linearly.
 
-With multiple source layers selected, each clone collapses back to its own source layer's original position at 0%.
-
 **Inheritance Chains**
 
-Select an existing Repeater null, then press any repeater button. React asks you to confirm, then adds a new, independent Repeater null on top of the same layers. No new layers are created.
+Select an existing Repeater null, then press any repeater button. React asks you to confirm, then adds a new, independent Repeater null on top of the same layers.
 
-The new Repeater null is always placed above every other null in that chain, regardless of which one was selected when it was added.
+Each repeater in the inheritance chain will be renamed to indicate their position in the chain.
 
 Each level blends from whatever came before it toward its own computed position, using its own Influence. At 100% Influence, the most recently added level overrides every level below it.
-
-<div class="alert-box">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
-  <div>
-    <span class="alert-box-label">Alert</span>
-    <p class="alert-box-text">Setting the original repeater's Influence to 0% currently overrides every level added on top of it, regardless of their own Influence. Keep the original repeater's Influence above 0% for inherited levels to have an effect.</p>
-  </div>
-</div>
 
 **Index Delay**
 
