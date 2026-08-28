@@ -346,15 +346,17 @@ New paths have a white stroke set to width 0 by default. Increase the stroke wid
 
 Blend a repeater between its original layout and its computed arrangement, and stack more than one repeater onto the same layers.
 
+Influence, Index Delay, and Elastic are built directly into each repeater's own effect (React - Grid, React - Radial, React - Sphere, React - Path) — they show up as extra properties under that same effect in the Effects panel, not as separate effects of their own.
+
 **Influence**
 
-Every Repeater null has an **Influence** slider (React - Repeater Influence), 100% by default.
+Every Repeater has its own **Influence** slider, 100% by default.
 
 At 100%, layers sit at the repeater's computed position. At 0%, layers sit at their original position, before any repeater was applied. Values in between blend linearly.
 
 **Inheritance Chains**
 
-Select an existing Repeater null, then press any repeater button. React asks you to confirm, then adds a new, independent Repeater null on top of the same layers.
+Select an existing Repeater null, then press any repeater button. React asks you to confirm, then adds a new, independent Repeater on top of the same layers.
 
 Each repeater in the inheritance chain will be renamed to indicate their position in the chain.
 
@@ -362,7 +364,7 @@ Each level blends from whatever came before it toward its own computed position,
 
 **Index Delay**
 
-Every Repeater null also has an **Index Delay** slider (React - Repeater Index Delay), in frames, 0 by default.
+Every Repeater also has its own **Influence Index Delay** slider, in frames, 0 by default.
 
 At 0, every layer responds to that level's Influence at the same time. Any other value staggers the response across the repeater, based on each layer's position in the sequence: the first layer responds immediately, the last layer responds after the full delay, and layers in between are spread proportionally across it.
 
@@ -370,12 +372,12 @@ For example, an Index Delay of 30 means the last layer in the repeater responds 
 
 **Elastic**
 
-Every Repeater null has its own Elastic controls, disabled by default. Adds a spring bounce when that level's Influence stops changing.
+Every Repeater has its own Elastic controls, disabled by default. Adds a spring bounce when that level's Influence stops changing.
 
-- **React - Repeater Elastic Enable**: turns elastic on or off for this level.
-- **React - Repeater Elastic Amplitude**: multiplier for bounce strength.
-- **React - Repeater Elastic Frequency**: oscillation speed.
-- **React - Repeater Elastic Decay**: how quickly the bounce settles.
+- **Enable? (Elastic)**: turns elastic on or off for this level.
+- **Elastic Amplitude**: multiplier for bounce strength.
+- **Elastic Frequency**: oscillation speed.
+- **Elastic Decay**: how quickly the bounce settles.
 
 If Index Delay is active on that level, the bounce is staggered along with the Influence, so each layer bounces at its own delayed moment instead of all at once.
 
