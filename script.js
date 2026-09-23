@@ -21,7 +21,7 @@
 // in package.json at build time, so the panel always sends the right version.
 // ---------------------------------------------------------------------------
 
-const CURRENT_VERSION = "3.1";
+const CURRENT_VERSION = "3.0";
 
 document.addEventListener('DOMContentLoaded', async function() {
   const requestedVersion = getVersionParam();
