@@ -308,8 +308,8 @@ function injectYouTubeIcons(container) {
 
     var ns = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('width', 26.4);
-    svg.setAttribute('height', 26.4);
+    svg.setAttribute('width', 28);
+    svg.setAttribute('height', 28);
     svg.setAttribute('viewBox', '0 0 28 28');
     var use = document.createElementNS(ns, 'use');
     use.setAttribute('href', '#icon-youtube');
