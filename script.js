@@ -262,13 +262,34 @@ function injectHeadingIcons(container) {
   });
 }
 
-// Adds a "Watch on YouTube" icon linking to the matching chapter timestamp,
-// next to headings that have a clean 1:1 match with a tutorial chapter.
-// Not every heading gets one -- only sections the video covers as their own
-// distinct chapter.
-function injectYouTubeIcons(container) {
-  const VIDEO_ID = '7vqUslINMS0';
+const YOUTUBE_VIDEO_ID = '7vqUslINMS0';
 
+function makeYouTubeLink(seconds) {
+  var link = document.createElement('a');
+  link.href = 'https://www.youtube.com/watch?v=' + YOUTUBE_VIDEO_ID + '&t=' + seconds + 's';
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.title = 'Watch on YouTube';
+  link.className = 'youtube-link';
+
+  var ns = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('width', 28);
+  svg.setAttribute('height', 28);
+  svg.setAttribute('viewBox', '0 0 28 28');
+  var use = document.createElementNS(ns, 'use');
+  use.setAttribute('href', '#icon-youtube');
+  svg.appendChild(use);
+  link.appendChild(svg);
+
+  return link;
+}
+
+// Adds a "Watch on YouTube" icon linking to the matching chapter timestamp,
+// next to headings (and occasionally a specific line of body text) that
+// have a clean 1:1 match with a tutorial chapter. Not every heading gets
+// one -- only sections the video covers as their own distinct chapter.
+function injectYouTubeIcons(container) {
   // section id -> chapter start time, in seconds
   const TIMESTAMPS = {
     'grid-repeater': 120,
@@ -297,24 +318,7 @@ function injectYouTubeIcons(container) {
 
   Object.entries(TIMESTAMPS).forEach(function(entry) {
     var id = entry[0];
-    var seconds = entry[1];
-
-    var link = document.createElement('a');
-    link.href = 'https://www.youtube.com/watch?v=' + VIDEO_ID + '&t=' + seconds + 's';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.title = 'Watch on YouTube';
-    link.className = 'youtube-link';
-
-    var ns = 'http://www.w3.org/2000/svg';
-    var svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('width', 28);
-    svg.setAttribute('height', 28);
-    svg.setAttribute('viewBox', '0 0 28 28');
-    var use = document.createElementNS(ns, 'use');
-    use.setAttribute('href', '#icon-youtube');
-    svg.appendChild(use);
-    link.appendChild(svg);
+    var link = makeYouTubeLink(entry[1]);
 
     // Sections rendered as <div id="..." class="section-heading"> already
     // hold their own icon as a direct child sibling of the <h2>/<h3> --
@@ -335,6 +339,31 @@ function injectYouTubeIcons(container) {
 
     heading.classList.add('heading-icon');
     heading.insertBefore(link, heading.firstChild);
+  });
+
+  // A few chapters match a specific line of body text rather than a heading.
+  const TEXT_TIMESTAMPS = [
+    {
+      tag: 'p',
+      text: 'With layers selected, React repeats them. With nothing selected, React creates null cloner layers.',
+      seconds: 416 // 6:56 - Creating a repeater with no selection
+    },
+    {
+      tag: 'strong',
+      text: 'Falloff',
+      seconds: 861 // 14:21 - Understanding falloff
+    }
+  ];
+
+  TEXT_TIMESTAMPS.forEach(function(entry) {
+    var els = container.querySelectorAll(entry.tag);
+    for (var i = 0; i < els.length; i++) {
+      if (els[i].textContent.trim() !== entry.text) continue;
+      var link = makeYouTubeLink(entry.seconds);
+      link.style.marginLeft = '10px';
+      els[i].appendChild(link);
+      break;
+    }
   });
 }
 
