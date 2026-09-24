@@ -360,6 +360,7 @@ function injectYouTubeIcons(container) {
     for (var i = 0; i < els.length; i++) {
       if (els[i].textContent.trim() !== entry.text) continue;
       var link = makeYouTubeLink(entry.seconds);
+      link.classList.add('youtube-link-inline');
       link.style.marginLeft = '10px';
       els[i].appendChild(link);
       break;

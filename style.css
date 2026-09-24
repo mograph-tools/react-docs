@@ -437,6 +437,13 @@ hr {
   border-bottom-color: transparent;
 }
 
+/* Inline body-text placements (not inside a flex heading container) need
+   an explicit vertical-align, or the inline-flex box sits high against
+   the text baseline instead of centered on it. */
+.youtube-link-inline {
+  vertical-align: middle;
+}
+
 /* ─── Tip Box ────────────────────────────────────────────────── */
 .tip-box {
   display: flex;
