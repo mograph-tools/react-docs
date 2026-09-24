@@ -421,6 +421,20 @@ hr {
   flex-shrink: 0;
 }
 
+/* ─── "Watch on YouTube" heading link ───────────────────────────── */
+.youtube-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.youtube-link:hover {
+  opacity: 1;
+}
+
 /* ─── Tip Box ────────────────────────────────────────────────── */
 .tip-box {
   display: flex;

@@ -129,6 +129,7 @@ async function loadMarkdownContent(version) {
     const markdown = await response.text();
     contentDiv.innerHTML = marked.parse(markdown);
     injectHeadingIcons(contentDiv);
+    injectYouTubeIcons(contentDiv);
 
     const headings = contentDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
     headings.forEach(heading => {
@@ -258,6 +259,81 @@ function injectHeadingIcons(container) {
 
     heading.classList.add('heading-icon');
     heading.appendChild(svg);
+  });
+}
+
+// Adds a "Watch on YouTube" icon linking to the matching chapter timestamp,
+// next to headings that have a clean 1:1 match with a tutorial chapter.
+// Not every heading gets one -- only sections the video covers as their own
+// distinct chapter.
+function injectYouTubeIcons(container) {
+  const VIDEO_ID = '7vqUslINMS0';
+
+  // section id -> chapter start time, in seconds
+  const TIMESTAMPS = {
+    'grid-repeater': 120,
+    'sorting-modes': 154,
+    'radial-repeater': 181,
+    'sphere-repeater': 232,
+    'path-repeater': 270,
+    'setting-repeater-amounts': 432,
+    'influence-inheritance': 490,
+    'text-layers': 705,
+    'effectors': 788,
+    'position-effector': 1045,
+    'noise-modifier': 1212,
+    'wave-modifier': 1369,
+    'elastic-modifier': 1464,
+    'snap-to-modifier': 1553,
+    'clamp-modifier': 1610,
+    'rotation-effector': 1664,
+    'scale-effector': 1808,
+    'other-effectors': 1865,
+    'color-effector': 1915,
+    'tracer-feature': 2041,
+    'refresh-button': 2156,
+    'delete-button': 2255
+  };
+
+  Object.entries(TIMESTAMPS).forEach(function(entry) {
+    var id = entry[0];
+    var seconds = entry[1];
+
+    var link = document.createElement('a');
+    link.href = 'https://www.youtube.com/watch?v=' + VIDEO_ID + '&t=' + seconds + 's';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.title = 'Watch on YouTube';
+    link.className = 'youtube-link';
+
+    var ns = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('width', 22);
+    svg.setAttribute('height', 22);
+    svg.setAttribute('viewBox', '0 0 28 28');
+    var use = document.createElementNS(ns, 'use');
+    use.setAttribute('href', '#icon-youtube');
+    svg.appendChild(use);
+    link.appendChild(svg);
+
+    // Sections rendered as <div id="..." class="section-heading"> already
+    // hold their own icon as a direct child sibling of the <h2>/<h3> --
+    // append the YouTube link the same way. Everything else is a bare
+    // <span id="..."></span> immediately before its heading.
+    var divAnchor = container.querySelector('div.section-heading[id="' + id + '"]');
+    if (divAnchor) {
+      divAnchor.appendChild(link);
+      return;
+    }
+
+    var span = container.querySelector('span[id="' + id + '"]');
+    if (!span) return;
+    var anchor = (span.parentElement && span.parentElement.tagName === 'P') ? span.parentElement : span;
+    var heading = anchor.nextElementSibling;
+    if (!heading || !/^H[1-6]$/.test(heading.tagName)) return;
+
+    heading.classList.add('heading-icon');
+    heading.appendChild(link);
   });
 }
 
