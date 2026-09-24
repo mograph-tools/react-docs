@@ -308,8 +308,8 @@ function injectYouTubeIcons(container) {
 
     var ns = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('width', 22);
-    svg.setAttribute('height', 22);
+    svg.setAttribute('width', 26.4);
+    svg.setAttribute('height', 26.4);
     svg.setAttribute('viewBox', '0 0 28 28');
     var use = document.createElementNS(ns, 'use');
     use.setAttribute('href', '#icon-youtube');
@@ -318,11 +318,12 @@ function injectYouTubeIcons(container) {
 
     // Sections rendered as <div id="..." class="section-heading"> already
     // hold their own icon as a direct child sibling of the <h2>/<h3> --
-    // append the YouTube link the same way. Everything else is a bare
-    // <span id="..."></span> immediately before its heading.
+    // insert the YouTube link as the first child so it sits left of the
+    // title. Everything else is a bare <span id="..."></span> immediately
+    // before its heading.
     var divAnchor = container.querySelector('div.section-heading[id="' + id + '"]');
     if (divAnchor) {
-      divAnchor.appendChild(link);
+      divAnchor.insertBefore(link, divAnchor.firstChild);
       return;
     }
 
@@ -333,7 +334,7 @@ function injectYouTubeIcons(container) {
     if (!heading || !/^H[1-6]$/.test(heading.tagName)) return;
 
     heading.classList.add('heading-icon');
-    heading.appendChild(link);
+    heading.insertBefore(link, heading.firstChild);
   });
 }
 
